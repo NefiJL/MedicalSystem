@@ -8,7 +8,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../js/bootstrap.bundle.js">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
     
 
 </head>
@@ -19,22 +19,15 @@
         <a href="resgistro.html"><b>Registro</b></a>
     </header>
 
-<body>
-    <form>
-        <div class="mb-3">
-          <label for="exampleInputNome" class="form-label">Nome</label>
-          <input type="Nome" class="form-control" id="exampleInputNome" aria-describedby="NomelHelp" autofocus required> 
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Senha</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" required>
-        </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Logar</button>
-      </form>
-        
+<body class=" text-center">
+    <form class="form-signin">
+      <h1 class=" h3 mb-3 font-weight-normal">Fazer Login</h1>
+      <label for="inputlogin" class="sr-only">Login</label>
+      <input type="text" id="inputLogin" class="form-control" placeholder="login" required autofocus>
+      <label for="inputPassword" id="inputPassword" class="form-control" placeholder="Senha" required></label>
+      <button class=" btn btn-lg btn-primary btn-block" type="submit">Logar</button>
+      <p class="mt-5 mb-3 text-muted">&copy; desde 2023</p>
+       
+    </form>
 </body>
 </html>
