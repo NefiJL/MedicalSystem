@@ -16,12 +16,12 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a class="nav-link" href="./index.php">Principal</a></li>
                 <li class="nav-item"><a class="nav-link" href="./login.php">Entrar</a></li>
-                <li class="nav-item"><a class="nav-link" href="./registro.php">Registrarse</a></li>
+                <li class="nav-item"><a class="nav-link" href="./registro.php">Registrar-se</a></li>
             </ul>
         </div>
 
         </div>
-        <nav class="navbar" style="margin-left: 25px;">
+        <nav class="navbar"style="margin-left: 29px;">
             <div class="container-fluid">
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
@@ -33,6 +33,7 @@
 </header>
 
 <body>
+
   <main style="margin-top: 70px;">
     <!-- Carrossel de itens -->
     <div id="carrossel" class="carousel slide" data-bs-ride="carousel">
@@ -57,7 +58,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="./img/img1.jpg" class="d-block w-100" alt="balbblablab">
+                <img src="./img/img2.jpg" class="d-block w-100" alt="balbblablab">
                 <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
                     <rect width="100%" height="100%" fill="#777" />
                 </svg>
