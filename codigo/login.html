@@ -17,8 +17,8 @@
         <div id="Menu">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Principal</a></li>
-                <li class="nav-item"><a class="nav-link" href="login.html">login</a></li>
-                <li class="nav-item"><a class="nav-link" href="registro.html">Registro</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Entrar</a></li>
+                <li class="nav-item"><a class="nav-link" href="registro.html">Registrarse</a></li>
 
             </ul>
         </div>
@@ -31,14 +31,27 @@
 
         <form class="form-signin">
 
-            <h1 class=" h3 mb-3 font-weight-normal">Fazer Log-in</h1>
-            <label for="inputlogin" class="sr-only"></label>
-            <input type="text" id="inputLogin" class="form-control" placeholder="E-mail" required autofocus>
-            <label for="inputPassword" class="sr-only"></label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required><br>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Log-in</button>
-            
-            <p class="mt-5 mb-3 text-muted">&copy; desde 2023</p>
+            <h1 class=" h3 mb-3 font-weight-normal" style="font-size: 28px;">Log in</h1>
+
+            <div class="inputContainer">
+
+                <input type="text" id="inputLogin" class="input" placeholder="a" required autofocus>
+
+                <label for="inputlogin" class="label">Email</label>
+
+            </div>
+
+            <div class="inputContainer">
+
+                <input type="text" id="inputSenhaL" class="input" placeholder="a" required>
+
+                <label for="inputSenhaL" class="label">Senha</label>
+
+                <button class="btn btn-lg btn-primary btn-block" style="margin-top: 80px;" type="submit">Log-in</button>
+
+                <p class="mt-5 mb-3 text-muted">&copy; desde 2023</p>
+
+            </div>
 
         </form>
 
