@@ -17,7 +17,7 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a class="nav-link" href="./index.php">Principal</a></li>
                 <li class="nav-item"><a class="nav-link" href="./login.php">Entrar</a></li>
-                <li class="nav-item"><a class="nav-link" href="./registro.php">Registrarse</a></li>
+                <li class="nav-item"><a class="nav-link" href="./registro.php">Registrar-se</a></li>
             </ul>
         </div>
 </header>
