@@ -26,7 +26,7 @@
 
     <div class="backgroundR">
 
-        <form action="registro2.html" class="form-signin">
+        <form action="registro2.php" class="form-signin">
 
             <h1 class=" h3 mb-3 font-weight-normal">Registrar-se</h1>
 
