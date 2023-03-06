@@ -10,16 +10,14 @@
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
     <link rel="stylesheet" type="text/css" href="./css/registro.css">
 </head>
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 
-        <div id="Menu">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="./index.php">Principal</a></li>
-                <li class="nav-item"><a class="nav-link" href="./login.php">Entrar</a></li>
-                <li class="nav-item"><a class="nav-link" href="./registro.php">Registrar-se</a></li>
-            </ul>
-        </div>
+<header>
+    
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.php">MedicalSystem</a>
+        </nav>
+
 </header>
 
 <body class=" text-center">
@@ -28,7 +26,7 @@
 
         <form action="registro2.php" class="form-signin">
 
-            <h1 class=" h3 mb-3 font-weight-normal">Registrar-se</h1>
+            <h1 class=" h3 mb-3 font-weight-normal">Sing up</h1>
 
             <div class="inputContainer">
 
@@ -45,9 +43,7 @@
                 <input type="submit" name="btnregistro" value="Continuar" class="btn btn-lg btn-primary btn-block"
                     style="margin-top: 30%;">
 
-                <p class="mt-5 mb-3 text-muted">&copy; desde 2023</p>
-
-
+                    <p style="text-center; margin-top: 20px"><a href="./login.php">Iniciar sessão</a></p>
             </div>
 
         </form>
