@@ -10,15 +10,11 @@
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
     <link rel="stylesheet" type="text/css" href="./css/login.css">
 </head>
+
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div id="Menu">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="./index.php">Principal</a></li>
-                <li class="nav-item"><a class="nav-link" href="./login.php">Entrar</a></li>
-                <li class="nav-item"><a class="nav-link" href="./registro.php">Registrar-se</a></li>
-            </ul>
-        </div>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.php">MedicalSystem</a>
     </nav>
 </header>
 
@@ -33,7 +29,6 @@
             <div class="inputContainer">
 
                 <input type="text" id="inputLogin" class="input" placeholder="a" required autofocus>
-
                 <label for="inputlogin" class="label">Email</label>
 
             </div>
@@ -41,13 +36,11 @@
             <div class="inputContainer">
 
                 <input type="text" id="inputSenhaL" class="input" placeholder="a" required>
-
                 <label for="inputSenhaL" class="label">Senha</label>
 
                 <button class="btn btn-lg btn-primary btn-block" style="margin-top: 80px;" type="submit">Log-in</button>
 
-                <p class="mt-5 mb-3 text-muted">&copy; desde 2023</p>
-
+                <p style="text-center; margin-top: 20px"><a href="./registro.php">Criar conta</a></p>
             </div>
 
         </form>
