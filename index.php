@@ -21,11 +21,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./login.php">Iniciar sessão</a>
+        <li class="nav-item"><a class="nav-link" href="./login.php">
+           <span data-feather="user" style="color: white;"></span>&nbsp;&nbsp; Iniciar sessão</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./registro.php">Criar uma conta</a>
+          <li class="nav-item"><a class="nav-link" href="./registro.php">
+            <span data-feather="user-plus" style="color: white;"></span>&nbsp;&nbsp;  Criar uma Conta</a>
           </li>
         </ul>
         <form class="d-flex" role="search">
@@ -40,7 +40,7 @@
 
 <body>
 
-  <main style="margin-top: 70px;">
+  <main style="margin-top: 0px;">
     <!-- Carrossel de itens -->
     <div id="carrossel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
@@ -51,7 +51,7 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="./img/img2.jpg" class="d-block w-100" alt="balbblablab">
+          <img src="./img//img6.png" class="d-block w-100" salt="balbblablab">
           <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
             <rect width="100%" height="100%" fill="#777" />
@@ -66,7 +66,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="./img/img2.jpg" class="d-block w-100" alt="balbblablab">
+          <img src="./img/img6.png" class="d-block w-100" alt="balbblablab">
           <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
             <rect width="100%" height="100%" fill="#777" />
@@ -80,7 +80,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="./img/img3.jpg" class="d-block w-100" alt="balbblablab">
+          <img src="./img/img6.png" class="d-block w-100" alt="balbblablab">
           <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
             <rect width="100%" height="100%" fill="#777" />
@@ -102,6 +102,11 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Próximo</span>
       </button>
     </div>
+
+    <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="./js/feather.mim.js"></script>
+    <script type="text/javascript" src="./js/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="./js/menu.js"></script>
 
 </body>
 
