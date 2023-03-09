@@ -21,11 +21,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
         <li class="nav-item"><a class="nav-link" href="./login.php">
-           <span data-feather="user" style="color: white;"></span>&nbsp;&nbsp; Iniciar sessão</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="./registro.php">
-            <span data-feather="user-plus" style="color: white;"></span>&nbsp;&nbsp;  Criar uma Conta</a>
+           <span data-feather="log-out" style="color: white;"></span>&nbsp;&nbsp; Log-out</a>
           </li>
         </ul>
         <form class="d-flex" role="search">
