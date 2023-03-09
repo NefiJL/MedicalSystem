@@ -1,4 +1,4 @@
-CREATE TABLE Cadastro(
+CREATE TABLE Usuario(
 
 
     id INT NOT NULL AUTO_INCREMENT,
@@ -12,3 +12,5 @@ CREATE TABLE Cadastro(
     
     PRIMARY KEY(id)
 );
+
+INSERT INTO `cadastro`(`Nome`, `Email`, `Cidade`, `Especialidade`, `CRM`, `Telefone`, `Senha`) VALUES ('Hector','hector@gmail.com','SC','Oftalmologia','00000101010','(47) 9 9285-8585','123')
