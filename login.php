@@ -1,3 +1,22 @@
+<?php
+include('conexao.php');
+
+    if(isset($_POST['email']) || isset($_POST['senha'])){
+        if(strlen($_POST['email'])==0){
+            echo "Preencha seu e-mail";
+        } else if (strlen($_POST['senha'])==0){
+            echo "Preencha sua senha";
+    }else{
+        
+        $email = $mysqli->real_scape_string($_POST['email']);
+        $email = $mysqli->real_scape_string($_POST['senha']);
+
+        $sql_code = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
+        
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -22,9 +41,9 @@
 
     <div class="backgroundL">
 
-        <form class="form-signin">
+       <form action="" method= "POST" class="form-signin">
 
-            <h1 class=" h3 mb-3 font-weight-normal" style="font-size: 28px;">Log in</h1>
+       <h1 class=" h3 mb-3 font-weight-normal" style="font-size: 28px;">Log in</h1>
 
             <div class="inputContainer">
 
@@ -40,10 +59,10 @@
 
                 <button class="btn btn-lg btn-primary btn-block" style="margin-top: 80px;" type="submit">Log-in</button>
 
-                <p style="text-center; margin-top: 20px"><a href="./registro.php">Criar conta</a></p>
+                <p style="text-center; margin-top: 20px"><a href="./registro.php">Criar uma conta?</a></p>
             </div>
 
-        </form>
+       </form>   
 
     </div>
 
