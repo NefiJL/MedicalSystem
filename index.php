@@ -61,7 +61,7 @@
             <div class="carousel-caption text-start">
 
               <h1>Medical System</h1>
-              <p>bla bla bla</p>
+              <p>O melhor site que você ja Visitou!</p>
             </div>
           </div>
         </div>
@@ -74,8 +74,8 @@
 
           <div class="container">
             <div class="carousel-caption">
-              <h1>Favorecidos</h1>
-              <p>Cadastre a fonte de seus recebimentos e pagamentos</p>
+              <h1>Entre e tire todas as suas Dúvidas!</h1>
+              <p></p>
             </div>
           </div>
         </div>
@@ -88,8 +88,8 @@
 
           <div class="container">
             <div class="carousel-caption text-end">
-              <h1>Contas a Pagar</h1>
-              <p>Controle os seus pagamentos</p>
+              <h1>1° do Mundo!</h1>
+              <p>Você nunca viu um igual a este!</p>
             </div>
           </div>
         </div>
