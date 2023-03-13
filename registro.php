@@ -1,3 +1,35 @@
+<?php
+// Importar archivo de conexión a la base de datos
+require_once 'conexao.php';
+
+// Inicializar variables de entrada de usuario
+$nome = '';
+$email = '';
+
+// Verificar si se han enviado datos del formulario
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  // Validar y limpiar los datos de entrada del usuario
+  $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
+  $email = mysqli_real_escape_string($conexao, $_POST['email']);
+
+  // Preparar consulta de inserción de usuario
+  $stmt = mysqli_prepare($conexao, "INSERT INTO usuario (nome, email) VALUES (?, ?)");
+  mysqli_stmt_bind_param($stmt, "ss", $nome, $email);
+
+  // Guardar datos en variables de sesión
+  $_SESSION['nome'] = $nome;
+  $_SESSION['email'] = $email;
+
+  exit();
+  
+// Cerrar la conexión a la base de datos
+mysqli_close($conexao);
+
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -24,20 +56,20 @@
 
     <div class="backgroundR">
 
-        <form action="registro2.php" class="form-signin">
+        <form method="POST" action="registro2.php"  class="form-signin">
 
             <h1 class=" h3 mb-3 font-weight-normal">Sing up</h1>
 
             <div class="inputContainer">
 
-                <input type="text" id="inputNome" class="input" placeholder="a" required autofocus>
+                <input type="text" id="inputNome" class="input" placeholder="a" name="nome" required autofocus>
                 <label for="inputNome" class="label">Nome</label>
 
             </div>
 
             <div class="inputContainer">
 
-                <input type="text" id="inputEmail" class="input" placeholder="a" required>
+                <input type="text" id="inputEmail" class="input" placeholder="a" name="email" required>
                 <label for="inputEmail" class="label">E-mail</label>
 
                 <input type="submit" name="btnregistro" value="Continuar" class="btn btn-lg btn-primary btn-block"
