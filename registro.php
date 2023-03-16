@@ -12,15 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
   $email = mysqli_real_escape_string($conexao, $_POST['email']);
 
-  // Preparar consulta de inserción de usuario
-  $stmt = mysqli_prepare($conexao, "INSERT INTO usuario (nome, email) VALUES (?, ?)");
-  mysqli_stmt_bind_param($stmt, "ss", $nome, $email);
-
   // Guardar datos en variables de sesión
   $_SESSION['nome'] = $nome;
   $_SESSION['email'] = $email;
 
-  exit();
   
 // Cerrar la conexión a la base de datos
 mysqli_close($conexao);
