@@ -8,6 +8,7 @@ $crm = '';
 $telefone = '';
 $senha = '';
 
+//echo "ddddd" . $_POST['nome'];
 
 // Verificar si se han enviado datos del formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -32,29 +33,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       }
 
    // Preparar consulta de inserción de usuario
-   $stmt = mysqli_prepare($conexao, "INSERT INTO usuario (cidade, especialidade, crm, telefone, senha) VALUES (?, ?, ?, ?, ?)");
-   mysqli_stmt_bind_param($stmt, "sssss", $cidade, $especialidade, $crm, $telefone, $senha);
+   $sql = "INSERT INTO usuario (cidade, especialidade, crm, telefone, senha) VALUES ('$cidade', '$especialidade', '$crm', '$telefone', '$senha')";
+   
+   // Executa a query SQL
+    if (mysqli_query($conexao, $sql)) {
+        echo "Dados inseridos com sucesso!";
+    } else {
+        echo "Erro ao inserir os dados: " . mysqli_error($conexao);
+    }
 
-   echo"teste";
- 
+// Fecha a conexão com o banco de dados
+mysqli_close($conexao);
+
+
    // Guardar datos en variables de sesión
   $_SESSION['cidade'] = $cidade;
   $_SESSION['especialidade'] = $especialidade;
   $_SESSION['crm'] = $crm;
   $_SESSION['telefone'] = $telefone;
   $_SESSION['senha'] = $senha;
-
-   // Cerrar la conexión a la base de datos
- mysqli_close($conexao);
-
- // Cerrar la consulta preparada
- mysqli_stmt_close($stmt);
- 
- 
  
 }
-
-//exit();
 ?>
 
 <!DOCTYPE html>
