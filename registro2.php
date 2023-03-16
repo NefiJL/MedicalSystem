@@ -34,6 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    // Preparar consulta de inserción de usuario
    $stmt = mysqli_prepare($conexao, "INSERT INTO usuario (cidade, especialidade, crm, telefone, senha) VALUES (?, ?, ?, ?, ?)");
    mysqli_stmt_bind_param($stmt, "sssss", $cidade, $especialidade, $crm, $telefone, $senha);
+
+   echo"teste";
  
    // Guardar datos en variables de sesión
   $_SESSION['cidade'] = $cidade;
@@ -49,10 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  mysqli_stmt_close($stmt);
  
  
- exit();
-
- }
  
+}
+
+//exit();
 ?>
 
 <!DOCTYPE html>
