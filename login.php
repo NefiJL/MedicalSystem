@@ -10,7 +10,7 @@ include('conexao.php');
         
         $email = $conexao->real_escape_string($_POST['email']);
         $senha = $conexao->real_escape_string($_POST['senha']);
-        $senha = md5(md5($_POST['senha']));
+        //$senha = md5(md5($_POST['senha']));
 
 
         //verifar si el usuario existe
