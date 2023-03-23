@@ -12,6 +12,14 @@ $senha = '';
 
 // Verificar si se han enviado datos del formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['nome'])) {
+        $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
+      }
+
+    if (isset($_POST['email'])) {
+        $email = mysqli_real_escape_string($conexao, $_POST['email']);
+      }
+
     if (isset($_POST['cidade'])) {
         $cidade = mysqli_real_escape_string($conexao, $_POST['cidade']);
       }
@@ -33,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       }
 
    // Preparar consulta de inserción de usuario
-   $sql = "INSERT INTO usuario (cidade, especialidade, crm, telefone, senha) VALUES ('$cidade', '$especialidade', '$crm', '$telefone', '$senha')";
+   $sql = "INSERT INTO usuario (nome, email, cidade, especialidade, crm, telefone, senha) VALUES ('$nome','$email', '$cidade', '$especialidade', '$crm', '$telefone', '$senha')";
    
    // Executa a query SQL
     if (mysqli_query($conexao, $sql)) {
