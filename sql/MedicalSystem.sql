@@ -6,9 +6,9 @@ CREATE TABLE usuario(
     email varchar (50) NOT null,
     cidade varchar (50) NOT null,
     especialidade varchar (50) NOT null,
-    CRM int(15) NOT null,
-    telefone int (14) NOT null,
-    senha int(20) NOT null,
+    CRM varchar (15) NOT null,
+    telefone varchar (14) NOT null,
+    senha varchar (20) NOT null,
     
     PRIMARY KEY(id)
 );
