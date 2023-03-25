@@ -3,9 +3,9 @@ include('conexao.php');
 
     if(isset($_POST['email']) || isset($_POST['senha'])){
         if(strlen($_POST['email'])==0){
-            echo "Preencha seu e-mail";
+            //echo "Preencha seu e-mail";
         } else if (strlen($_POST['senha'])==0){
-            echo "Preencha sua senha";
+            //echo "Preencha sua senha";
     }else{
         
         $email = $conexao->real_escape_string($_POST['email']);
@@ -69,7 +69,7 @@ include('conexao.php');
 
        <form action="" method="POST" class="form-signin">
 
-       <h1 class=" h3 mb-3 font-weight-normal" style="font-size: 28px;">Log in</h1>
+       <h1 class=" h3 mb-3 font-weight-normal" style="font-size: 28px;">Entrar</h1>
 
             <div class="inputContainer">
 
