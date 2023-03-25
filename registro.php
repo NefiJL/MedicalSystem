@@ -53,7 +53,7 @@ mysqli_close($conexao);
 
         <form method="POST" action="registro2.php"  class="form-signin">
 
-            <h1 class=" h3 mb-3 font-weight-normal">Sing up</h1>
+            <h1 class=" h3 mb-3 font-weight-normal">Registrar-se</h1>
 
             <div class="inputContainer">
 
