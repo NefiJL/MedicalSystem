@@ -34,9 +34,6 @@ if(!isset($_SESSION)){
           <li class="nav-item"><a class="nav-link" href="#">
             <span data-feather="user" style="color: white;"></span>&nbsp;&nbsp;</a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="./login.php">
-           <span data-feather="edit" style="color: white;"></span>&nbsp;&nbsp; Iniciar sessão</a>
-          </li>
           <li class="nav-item"><a class="nav-link" href="logout.php">
             <span data-feather="log-out" style="color: white;"></span>&nbsp;&nbsp;Log-out</a>
           </li>

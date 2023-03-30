@@ -47,13 +47,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($count > 0) {
 
         // Si el email ya existe, mostrar un mensaje de error al usuario y no realizar la inserción de los datos del usuario
-        echo "El email ya existe en la base de datos. Inténtelo de nuevo con un email diferente.";
+        echo "O e-mail já existe no banco de dados. Tente novamente com um e-mail diferente.";
     
     }
     if ($count2 > 0) {
 
         // Si el crm ya existe, mostrar un mensaje de error al usuario y no realizar la inserción de los datos del usuario
-        echo "El crm ya existe en la base de datos. Inténtelo de nuevo con un crm diferente.";
+        echo "O CRM já existe no banco de dados. Por favor, tente novamente com um crm diferente.";
 
     } else {
 
