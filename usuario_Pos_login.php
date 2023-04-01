@@ -20,35 +20,56 @@ if(!isset($_SESSION)){
   <link rel="stylesheet" type="text/css" href="./css/styles.css">
   <script src='./js/bootstrap.bundle.js'></script>
 </head>
+
 <header>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="./index.php">MedicalSystem</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#">
-            <span data-feather="user" style="color: white;"></span>&nbsp;&nbsp;</a>
+<nav class="navbar navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    
+    <a class="navbar-brand" href="#">
+              <?php
+              echo "<h3>" . $_SESSION["nome"] . "</h3>";
+              ?>
+              </a>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search experience" aria-label="Search ">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+          <li class="nav-item"><a class="nav-link">
+              <span data-feather="book" style="color: white;"></span>&nbsp;&nbsp;Relatar
+              </a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="logout.php">
-            <span data-feather="log-out" style="color: white;"></span>&nbsp;&nbsp;Log-out</a>
+
+          <li class="nav-item"><a class="nav-link">
+              <span data-feather="book-open" style="color: white;"></span>&nbsp;&nbsp;Meus Relatos
+              </a>
           </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+
+          <li class="nav-item"><a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt nav_icon"></i>
+              <span data-feather="log-out" style="color: white;"></span>&nbsp;&nbsp;Log-out</a>
+          </li>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
 </header>
 
-<body>
+<body id="body">
 
   <main style="margin-top: 0px;">
     <!-- Carrossel de itens -->
@@ -111,6 +132,7 @@ if(!isset($_SESSION)){
       <button class="carousel-control-next" type="button" data-bs-target="#carrossel" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Próximo</span>
       </button>
+    </div>
     </div>
 
     <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
