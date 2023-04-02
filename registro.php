@@ -9,8 +9,6 @@ $especialidade = '';
 $crm = '';
 $senha = '';
 
-//echo "ddddd" . $_POST['nome'];
-
 // Verificar si se han enviado datos del formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -115,7 +113,7 @@ mysqli_close($conexao);
                 <div class="inputContainer">
 
                     <input type="text" id="inputNome" class="input" name="nome" placeholder="a" required autofocus>
-                    <label for="inputNome" class="label">Nome</label>
+                    <label for="inputNome" class="label">Nome de usuario</label>
 
                 </div>
                 
