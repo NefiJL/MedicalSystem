@@ -49,7 +49,7 @@ if(!isset($_SESSION)){
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
-          <li class="nav-item"><a class="nav-link">
+          <li class="nav-item"><a class="nav-link" href="relato.php">
               <span data-feather="book" style="color: white;"></span>&nbsp;&nbsp;Relatar
               </a>
           </li>
