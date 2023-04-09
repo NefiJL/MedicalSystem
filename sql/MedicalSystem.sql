@@ -5,7 +5,7 @@ CREATE TABLE usuario(
     email varchar (50) NOT null,
     especialidade varchar (50) NOT null,
     CRM varchar (15) NOT null,
-    senha varchar (20) NOT null,
+    senha varchar (100) NOT null,
     
     PRIMARY KEY(id)
 );
@@ -15,11 +15,14 @@ INSERT INTO `usuario`(`Nome`, `Email`, `Especialidade`, `CRM`, `Senha`) VALUES (
 CREATE TABLE relato(
 
     idR INT NOT NULL AUTO_INCREMENT,
-    altura VARCHAR(3) NOT NULL,
+    altura VARCHAR(10) NOT NULL,
+    peso VARCHAR(10) NOT NULL,
     idade INT NOT NULL,
     sexo ENUM('Masculino', 'm','M', 'f', 'M', 'Femenino') NOT NULL,
     dataR DATE NOT NULL,
-    relato VARCHAR(10000) NOT NULL,
+    titulo VARCHAR(500) NOT NULL,
+    observacao VARCHAR(5000) NOT NULL,
+    relatoD VARCHAR(10000) NOT NULL,
     PRIMARY KEY(idR)
 
 );
