@@ -7,16 +7,23 @@ include('protect.php');
 
 // Inicializar variables de entrada de usuario
 $altura = '';
+$peso = '';
 $idade = '';
 $sexo = '';
 $dataR = '';
-$relato = '';
+$observacao = '';
+$relatoD = '';
+$titulo = '';
 
 // Verificar si se han enviado datos del formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($_POST['altura'])) {
         $altura = mysqli_real_escape_string($conexao, $_POST['altura']);
+      }
+
+      if (isset($_POST['peso'])) {
+        $peso = mysqli_real_escape_string($conexao, $_POST['peso']);
       }
 
     if (isset($_POST['idade'])) {
@@ -30,13 +37,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       if (isset($_POST['dataR'])) {
         $dataR = mysqli_real_escape_string($conexao, $_POST['dataR']);
       }
+
+      if (isset($_POST['observacao'])) {
+        $observacao = mysqli_real_escape_string($conexao, $_POST['observacao']);
+      }
       
-      if (isset($_POST['relato'])) {
-        $relato = mysqli_real_escape_string($conexao, $_POST['relato']);
+      if (isset($_POST['relatoD'])) {
+        $relatoD = mysqli_real_escape_string($conexao, $_POST['relatoD']);
+      }
+
+      if (isset($_POST['titulo'])) {
+        $tiutlo = mysqli_real_escape_string($conexao, $_POST['titulo']);
       }
 
    // Preparar consulta de inserción de en el relato
-   $sql = "INSERT INTO relato (altura, idade, sexo, dataR, relato) VALUES ('$altura', '$idade', '$sexo', '$dataR', '$relato')";
+   $sql = "INSERT INTO relato (altura, peso, idade, sexo, dataR, titulo, observacao, relatoD) VALUES ('$altura', '$peso', '$idade', '$sexo', '$dataR', '$tiutlo','$observacao', '$relatoD')";
 
    
    // Executa a query SQL
@@ -51,10 +66,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Guardar datos en variables de sesión
 $_SESSION['altura'] = $altura;
+$_SESSION['peso'] = $peso;
 $_SESSION['idade'] = $idade;
 $_SESSION['sexo'] = $sexo;
 $_SESSION['dataR'] = $dataR;
-$_SESSION['relato'] = $relato;
+$_SESSION['observacao'] = $observacao;
+$_SESSION['titulo'] = $titulo;
+$_SESSION['relatoD'] = $relatoD;
  
 
 // Cerrar la conexión a la base de datos
@@ -94,25 +112,39 @@ mysqli_close($conexao);
   <form method="POST">
     
     <div class="mb-3 texto">
+
       <h1 class="paciente">Dados do paciente</h1>
-      <label class="altura" for="altura">Altura:</label>
-      <input type="text" class="form-control" id="altura" name="altura" placeholder="Digite sua altura" required>
+
+      <label for="altura">Altura:</label>
+      <input type="text" class="form-control" id="altura" name="altura" placeholder="Digite a altura" required>
+
+      <label for="peso">Peso:</label>
+      <input type="text" class="form-control" id="peso" name="peso" placeholder="Digite o peso (Kg)" required>
       
-      <label for="idade" class="idade">Idade:</label>
-      <input type="number" class="form-control" id="idade" name="idade" placeholder="Digite sua idade" required>
+      <label for="idade">Idade:</label>
+      <input type="number" class="form-control" id="idade" name="idade" placeholder="Digite a idade" required>
       
-      <label for="sexo" class="idade">Sexo:</label>
+      <label for="sexo">Sexo:</label>
       <input type="text" class="form-control" id="sexo" name="sexo" placeholder="F (para femenino) ou M (para masculino)" required>
       
-      <label for="data" class="data">Data:</label>
+      <label for="data">Data:</label>
       <input type="date" class="form-control" id="dataR" name="dataR" placeholder="Digite a data" required>
+
+      <label for="titulo">Titulo:</label>
+      <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo do relato" required>
       
     </div>
-    
+
     <div class="mb-3 texto">
-      <label for="relato" class="form-label" style="margin-left: 50%;">Faça seu relato</label>
-      <textarea class="form-control" id="relato" name="relato" rows="3" required></textarea>
+      <label for="relato" class="form-label" style="margin-left: 50%;">Obsevações</label>
+      <textarea class="form-control" id="relatoD" name="relatoD"></textarea>
     </div>
+
+    <div class="mb-3 texto">
+      <label for="observacao" class="form-label" style="margin-left: 50%;">Faça seu relato</label>
+      <textarea class="form-control" id="observacao" name="observacao" rows="20" required></textarea>
+    </div>
+    
     
     <div style="text-align: center;">
 
