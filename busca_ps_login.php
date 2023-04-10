@@ -69,59 +69,23 @@ if(!isset($_SESSION)){
 
 </header>
 
-<body class="color">
-<div class="row coluna">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Título especial</h5>
-        <p class="card-text">Quando o osso está muito fora do lugar e não pode ser corrigido 
-          ou mantido na posição correta com o uso de gesso, é necessário fazer a cirurgia.
-          Dependendo da fratura, há várias opções para manter os ossos na posição correta até a consolidação:
-          gesso; pinos metálicos (normalmente de aço inoxidável ou titânio); </p>
-        <a href="#" class="btn btn-primary">Visitar</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Título especial</h5>
-        <p class="card-text">Quando o osso está muito fora do lugar e não pode ser corrigido 
-          ou mantido na posição correta com o uso de gesso, é necessário fazer a cirurgia.
-          Dependendo da fratura, há várias opções para manter os ossos na posição correta até a consolidação:
-          gesso; pinos metálicos (normalmente de aço inoxidável ou titânio);</p>
-        <a href="#" class="btn btn-primary">Visitar</a>
-      </div>
-    </div>
-  </div>
+<div class="card" style="width: 18rem; margin-top: 10%;">
+  
+<div class="card-body">
+    <h5 class="card-title text-center">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 </div>
-<div class="row coluna">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Título especial</h5>
-        <p class="text">Quando o osso está muito fora do lugar e não pode ser corrigido 
-          ou mantido na posição correta com o uso de gesso, é necessário fazer a cirurgia.
-          Dependendo da fratura, há várias opções para manter os ossos na posição correta até a consolidação:
-          gesso; pinos metálicos (normalmente de aço inoxidável ou titânio); </p>
-        <a href="#" class="btn btn-primary">Visitar</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Título especial</h5>
-        <p class="card-text">Quando o osso está muito fora do lugar e não pode ser corrigido 
-          ou mantido na posição correta com o uso de gesso, é necessário fazer a cirurgia.
-          Dependendo da fratura, há várias opções para manter os ossos na posição correta até a consolidação:
-          gesso; pinos metálicos (normalmente de aço inoxidável ou titânio);</p>
-        <a href="#" class="btn btn-primary">Visitar</a>
-      </div>
-    </div>
-  </div>
+
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">An item</li>
+    <li class="list-group-item">A second item</li>
+    <li class="list-group-item">A third item</li>
+</ul>
+
+<div class="card-body text-center">
+    <button class="btn btn-lg btn-primary" type="submit">Ver mais</button>
 </div>
+
 <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
     <script type="text/javascript" src="./js/feather.mim.js"></script>
     <script type="text/javascript" src="./js/jquery-3.6.3.min.js"></script>
