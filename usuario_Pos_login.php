@@ -32,8 +32,8 @@ if(!isset($_SESSION)){
               ?>
               </a>
     <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search experience" aria-label="Search ">
-      <button class="btn btn-outline-success" type="submit">Search</button>
+      <input class="form-control me-2" type="search" placeholder="buscar" aria-label="Search ">
+      <button class="btn btn-outline-success" type="submit">Pesquisar</button>
     </form>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -60,7 +60,7 @@ if(!isset($_SESSION)){
           </li>
 
           <li class="nav-item"><a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt nav_icon"></i>
-              <span data-feather="log-out" style="color: white;"></span>&nbsp;&nbsp;Log-out</a>
+              <span data-feather="log-out" style="color: white;"></span>&nbsp;&nbsp;Sair</a>
           </li>
       </div>
     </div>
