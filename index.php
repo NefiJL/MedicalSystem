@@ -29,10 +29,11 @@
             <span data-feather="user-plus" style="color: white;"></span>&nbsp;&nbsp;  Criar uma Conta</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <form class="d-flex" role="search" action="./Busca_pos_login.php">
+  <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+  <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+</form>
+
       </div>
     </div>
   </nav>
@@ -108,6 +109,7 @@
     <script type="text/javascript" src="./js/feather.mim.js"></script>
     <script type="text/javascript" src="./js/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="./js/menu.js"></script>
+    <script type="text/javascript" src="./js/campo_pesquisa.js"></script>
 
 </body>
 
