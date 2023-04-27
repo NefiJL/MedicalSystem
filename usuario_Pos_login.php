@@ -54,7 +54,7 @@ if(!isset($_SESSION)){
               </a>
           </li>
 
-          <li class="nav-item"><a class="nav-link">
+          <li class="nav-item"><a class="nav-link" href="meus_relatos.php">
               <span data-feather="book-open" style="color: white;"></span>&nbsp;&nbsp;Meus Relatos
               </a>
           </li>
