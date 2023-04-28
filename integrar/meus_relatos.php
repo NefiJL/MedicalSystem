@@ -18,7 +18,7 @@ if(!isset($_SESSION)){
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/vizualizar_relato.css">
+  <link rel="stylesheet" href="./css/meus_relatos.css">
   <script src='./js/bootstrap.bundle.js'></script>
 
 </head>
@@ -65,7 +65,7 @@ if(!isset($_SESSION)){
 </nav>
 
 </header>
-<div class="col-sm-3"  style="margin-top: 10%;">
+<div class="col-sm-3"  style=" margin-left: 5rem; margin-top: 10%;">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Fratura Do Pé</h5>
@@ -78,7 +78,7 @@ if(!isset($_SESSION)){
         </div>
       </div>
     </div>
-  <div class="col-sm-3" style="margin-left: 30rem; margin-top: -25%;">
+  <div class="col-sm-3" style="margin-left: 35rem; margin-top: -25%;">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Fratura Do Pé</h5>
@@ -91,8 +91,8 @@ if(!isset($_SESSION)){
         </div>
       </div>
   </div>
-  
-  <div class="col-sm-3"style="margin-left: 60rem;  margin-top: -26%;">
+  <div class="card3">
+  <div class="col-sm-3"style="margin-left: 65rem;">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Fratura Do Pé</h5>
@@ -105,7 +105,7 @@ if(!isset($_SESSION)){
         </div>
       </div>
     </div>
-  
+    ></div>
 
 <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
     <script type="text/javascript" src="./js/feather.mim.js"></script>
