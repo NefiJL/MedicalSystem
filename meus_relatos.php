@@ -65,14 +65,30 @@ if(!isset($_SESSION)){
 </nav>
 
 </header>
-<div class="card " style="width: 18rem;">
+<div class="card " style="width: 18rem; margin-top: 8%; ">
   <div class="card-body">
     <h5 class="card-title">Fratura Do Pé</h5>
     <p class="card-text">O tratamento das fraturas do pé depende do osso fraturado e do tipo de fratura, mas
             geralmente envolve colocar o pé e o tornozelo em uma tala (e, às vezes, em um molde de gesso) ou em um
-            calçado ou bota especialmente projetados, com os dedos do pé expostos, prendedores de Velcro e uma sola
-            rígida para proteger o pé de mais lesões.Muitas vezes as pessoas são instruídas a não colocar nenhum
-            peso no pé por um período. </p>
+            calçado ou bota especialmente projetados. </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Idade:</li>  <li class="list-group-item">Genero:</li>
+    <li class="list-group-item">Data:</li>
+    <li class="list-group-item">Peso:</li>
+  </ul>
+  <div class="card-body text-center">
+    <a href="#" class="btn btn-primary">Visualizar</a>
+  </div>
+</div> 
+  
+
+<div class="card " style="width: 18rem; margin-top: -36%; margin-left: 25rem;">
+  <div class="card-body">
+    <h5 class="card-title">Fratura Do Pé</h5>
+    <p class="card-text">O tratamento das fraturas do pé depende do osso fraturado e do tipo de fratura, mas
+            geralmente envolve colocar o pé e o tornozelo em uma tala (e, às vezes, em um molde de gesso) ou em um
+            calçado ou bota especialmente projetados. </p>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Idade:</li>  <li class="list-group-item">Genero:</li>
@@ -80,37 +96,26 @@ if(!isset($_SESSION)){
     <li class="list-group-item">Peso:</li>
   </ul>
   <div class="card-body">
-    <a href="#" class="card-link">Visualizar</a>
+    <a href="#" class="btn btn-primary">Visualizar</a>
   </div>
 </div>
-  <div class="col-sm-3" style="margin-left: 35rem; margin-top: -25%;">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Fratura Do Pé</h5>
-          <p class="card-text">O tratamento das fraturas do pé depende do osso fraturado e do tipo de fratura, mas
+
+<div class="card " style="width: 18rem; margin-top: -36%; margin-left: 50rem;">
+  <div class="card-body">
+    <h5 class="card-title">Fratura Do Pé</h5>
+    <p class="card-text">O tratamento das fraturas do pé depende do osso fraturado e do tipo de fratura, mas
             geralmente envolve colocar o pé e o tornozelo em uma tala (e, às vezes, em um molde de gesso) ou em um
-            calçado ou bota especialmente projetados, com os dedos do pé expostos, prendedores de Velcro e uma sola
-            rígida para proteger o pé de mais lesões.Muitas vezes as pessoas são instruídas a não colocar nenhum
-            peso no pé por um período. </p>
-          <a href="#" class="btn btn-primary">Visualizar</a> <a href="#" class="btn btn-primary">Editar</a>
-        </div>
-      </div>
+            calçado ou bota especialmente projetados. </p>
   </div>
-  <div class="card3">
-  <div class="col-sm-3"style="margin-left: 65rem;">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Fratura Do Pé</h5>
-          <p class="card-text">O tratamento das fraturas do pé depende do osso fraturado e do tipo de fratura, mas
-            geralmente envolve colocar o pé e o tornozelo em uma tala (e, às vezes, em um molde de gesso) ou em um
-            calçado ou bota especialmente projetados, com os dedos do pé expostos, prendedores de Velcro e uma sola
-            rígida para proteger o pé de mais lesões.Muitas vezes as pessoas são instruídas a não colocar nenhum
-            peso no pé por um período. </p>
-          <a href="#" class="btn btn-primary">Visualizar</a> <a href="#" class="btn btn-primary">Editar</a>
-        </div>
-      </div>
-    </div>
-    ></div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Idade:</li>  <li class="list-group-item">Genero:</li>
+    <li class="list-group-item">Data:</li>
+    <li class="list-group-item">Peso:</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="btn btn-primary">Visualizar</a>
+  </div>
+</div>
 
 <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
     <script type="text/javascript" src="./js/feather.mim.js"></script>
