@@ -29,7 +29,7 @@
             <span data-feather="user-plus" style="color: white;"></span>&nbsp;&nbsp;  Criar uma Conta</a>
           </li>
         </ul>
-        <form class="d-flex" role="search" action="./Busca_pos_login.php">
+        <form class="d-flex" role="search" action="#">
   <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
   <button class="btn btn-outline-success" type="submit">Pesquisar</button>
 </form>
