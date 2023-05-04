@@ -71,7 +71,7 @@ if(!isset($_SESSION)){
 
 <body id="body">
 
-  <main style="margin-top: 0px;">
+  <main style="margin-top: 35px;">
     <!-- Carrossel de itens -->
     <div id="carrossel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
