@@ -81,7 +81,7 @@ $all_relato = $conexao->query($sql);
     <div div class="card border-dark text-bg-dark mb-3" style="max-width: 18rem; margin-top: 10%; margin-left: 3%">
       <div class="card-body">
         <h5 class="card-title" style="text-align: center" name="titulo" id="tituloID"><b><?php echo $row["titulo"];?></b></h5>
-        <p class="card-text" name="relato" id="relatoID"><?php echo $row["relatoD"];?>.</p>
+        <p class="card-text" name="relato" id="relatoID"><?php echo $row["relatoD"];?></p>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item" name="altura" id="alturaID"><b>Altura:</b><?php echo $row["altura"];?>Mt</li>
