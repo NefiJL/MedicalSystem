@@ -18,7 +18,7 @@ CREATE TABLE relato(
     altura VARCHAR(10) NOT NULL,
     peso VARCHAR(10) NOT NULL,
     idade INT NOT NULL,
-    sexo ENUM('Masculino', 'm','M', 'f', 'M', 'Femenino') NOT NULL,
+    sexo ENUM('Masculino', 'm','M', 'f', 'F', 'Femenino') NOT NULL,
     dataR DATE NOT NULL,
     titulo VARCHAR(500) NOT NULL,
     observacao VARCHAR(5000) NOT NULL,
