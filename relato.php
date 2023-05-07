@@ -137,12 +137,12 @@ mysqli_close($conexao);
 
     <div class="mb-3 texto">
       <label for="observacao" class="form-label" style="margin-left: 50%;">Obsevações</label>
-      <textarea class="form-control" id="observacao" name="observacao" rows="20" required></textarea>
+      <textarea class="form-control" id="observacao" name="observacao"></textarea>
     </div>
 
     <div class="mb-3 texto">
       <label for="relato" class="form-label" style="margin-left: 50%;">Faça seu relato</label>
-      <textarea class="form-control" id="relatoD" name="relatoD"></textarea>
+      <textarea class="form-control" id="relatoD" name="relatoD" rows="20" required></textarea>
     </div>
     
     
