@@ -115,20 +115,20 @@ mysqli_close($conexao);
 
       <h1 class="paciente">Dados do paciente</h1>
 
-      <label for="altura">Altura:</label>
-      <input type="text" class="form-control" id="altura" name="altura" placeholder="Digite a altura" required>
+      <label for="altura">Altura (M):</label>
+      <input type="text" class="form-control" id="altura" name="altura" placeholder="Exemplo: 1.84" required>
 
-      <label for="peso">Peso:</label>
-      <input type="text" class="form-control" id="peso" name="peso" placeholder="Digite o peso (Kg)" required>
+      <label for="peso">Peso (Kg):</label>
+      <input type="text" class="form-control" id="peso" name="peso" placeholder="Exemplo: 65.4" required>
       
       <label for="idade">Idade:</label>
-      <input type="number" class="form-control" id="idade" name="idade" placeholder="Digite a idade" required>
+      <input type="number" class="form-control" id="idade" name="idade" placeholder="Exemplo: 20" required>
       
       <label for="sexo">Sexo:</label>
       <input type="text" class="form-control" id="sexo" name="sexo" placeholder="F (para femenino) ou M (para masculino)" required>
       
       <label for="data">Data:</label>
-      <input type="date" class="form-control" id="dataR" name="dataR" placeholder="Digite a data" required>
+      <input type="date" class="form-control" id="dataR" name="dataR" placeholder="dd/mm/aa" required>
 
       <label for="titulo">Titulo:</label>
       <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo do relato" required>
@@ -136,13 +136,13 @@ mysqli_close($conexao);
     </div>
 
     <div class="mb-3 texto">
-      <label for="relato" class="form-label" style="margin-left: 50%;">Obsevações</label>
-      <textarea class="form-control" id="relatoD" name="relatoD"></textarea>
+      <label for="observacao" class="form-label" style="margin-left: 50%;">Obsevações</label>
+      <textarea class="form-control" id="observacao" name="observacao" rows="20" required></textarea>
     </div>
 
     <div class="mb-3 texto">
-      <label for="observacao" class="form-label" style="margin-left: 50%;">Faça seu relato</label>
-      <textarea class="form-control" id="observacao" name="observacao" rows="20" required></textarea>
+      <label for="relato" class="form-label" style="margin-left: 50%;">Faça seu relato</label>
+      <textarea class="form-control" id="relatoD" name="relatoD"></textarea>
     </div>
     
     
