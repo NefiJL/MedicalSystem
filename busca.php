@@ -18,6 +18,7 @@ $all_relato = $conexao->query($sql);
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  <link rel="stylesheet" type="text/css" href="./css/busca.css">
   <script src='./js/bootstrap.bundle.js'></script>
 </head>
 
@@ -75,27 +76,42 @@ $all_relato = $conexao->query($sql);
 <body id="body">
 
   <main>
-  <?php
+    <?php
+    $count = 0;
     while($row = mysqli_fetch_assoc($all_relato)){
-  ?>
-    <div div class="card border-dark text-bg-dark mb-3" style="max-width: 18rem; margin-top: 10%; margin-left: 3%">
-      <div class="card-body">
-        <h5 class="card-title" style="text-align: center" name="titulo" id="tituloID"><b><?php echo $row["titulo"];?></b></h5>
-        <p class="card-text" name="relato" id="relatoID"><?php echo $row["relatoD"];?></p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item" name="altura" id="alturaID"><b>Altura:</b><?php echo $row["altura"];?>Mt</li>
-        <li class="list-group-item" name="peso" id="pesoID"><b>Peso:</b><?php echo $row["peso"];?>Kg</li>
-        <li class="list-group-item" name="idade" id="IdadeID"><b>Idade:</b><?php echo $row["idade"];?>anos</li>
-        <li class="list-group-item" name="sexo" id="sexoID"><b>Sexo:</b><?php echo $row["sexo"];?></li>
-      </ul>
-      <div class="card-body" style="text-align: center">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Visualizar</button>
+    ?>
+      <div class="card border-dark text-bg-dark mb-3"
+        style="max-width: 18rem; margin-top: 8.3%; margin-left: 3%; display: inline-block; width: 18rem; height: auto;">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center" name="titulo" id="tituloID"><b>
+              <?php echo $row["titulo"];?>
+            </b></h5>
+          <p class="card-text" name="relato" id="relatoID">
+            <?php echo $row["relatoD"];?>
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" name="altura" id="alturaID"><b>Altura:</b>
+            <?php echo $row["altura"];?>Mt
+          </li>
+          <li class="list-group-item" name="peso" id="pesoID"><b>Peso:</b>
+            <?php echo $row["peso"];?>Kg
+          </li>
+          <li class="list-group-item" name="idade" id="IdadeID"><b>Idade:</b>
+            <?php echo $row["idade"];?>anos
+          </li>
+          <li class="list-group-item" name="sexo" id="sexoID"><b>Sexo:</b>
+            <?php echo $row["sexo"];?>
+          </li>
+        </ul>
+        <div class="card-body" style="text-align: center">
+          <button class="btn btn-lg btn-primary btn-block btn-animado" type="submit">Visualizar</button>
+        </div>
       </div>
     </div>
-  <?php
+    <?php
     }
-  ?> 
+    ?>
   </main>
   <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
   <script type="text/javascript" src="./js/feather.mim.js"></script>
