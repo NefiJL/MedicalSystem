@@ -147,8 +147,8 @@ mysqli_close($conexao);
     
     
     <div style="text-align: center; margin-top: -30px;">
-
-      <input id="btn" type="submit" value="Publicar" style="margin-left: 50px;">
+    
+      <input id="btn" type="submit" value="Publicar" style="margin-left: 50px; background-color: black;">
     
     </div>
     
