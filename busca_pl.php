@@ -27,11 +27,8 @@ $all_relato = $conexao->query($sql);
   <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
 
-      <a class="navbar-brand" href="#">
-        <?php
-              echo "<h3>" . $_SESSION["nome"] . "</h3>";
-              ?>
-      </a>
+    <a class="navbar-brand" href="./usuario_Pos_login.php">MedicalSystem</a>
+
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="buscar" aria-label="Search ">
         <button class="btn btn-outline-success" type="submit">Pesquisar</button>
@@ -60,6 +57,11 @@ $all_relato = $conexao->query($sql);
 
             <li class="nav-item"><a class="nav-link" href="meus_relatos.php">
                 <span data-feather="book-open" style="color: white;"></span>&nbsp;&nbsp;Meus Relatos
+              </a>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="busca_pl.php">
+                <span data-feather="globe" style="color: white;"></span>&nbsp;&nbsp;Navegar
               </a>
             </li>
 
@@ -105,7 +107,7 @@ $all_relato = $conexao->query($sql);
           </li>
         </ul>
         <div class="card-body" style="text-align: center">
-          <button class="btn btn-lg btn-primary btn-block btn-animado" type="submit">Visualizar</button>
+          <button class="btn btn-outline-primary" type="submit">Visualizar</button>
         </div>
       </div>
     </div>

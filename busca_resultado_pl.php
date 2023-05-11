@@ -32,16 +32,10 @@ if(!isset($_SESSION)){
 
   <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-
-      <a class="navbar-brand" href="#">
-        <?php
-              echo "<h3>" . $_SESSION["nome"] . "</h3>";
-              ?>
-      </a>
-
-      <form class="d-flex" role="search" action="busca_resultado_pl.php" metho="POST">
-        <input name="busca" class="form-control me-2" type="search" placeholder="Search story" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+    <a class="navbar-brand" href="./usuario_Pos_login.php">MedicalSystem</a>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="buscar" aria-label="Search ">
+        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
       </form>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
@@ -58,7 +52,6 @@ if(!isset($_SESSION)){
         </div>
 
         <div class="offcanvas-body">
-
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
             <li class="nav-item"><a class="nav-link" href="relato.php">
@@ -66,16 +59,19 @@ if(!isset($_SESSION)){
               </a>
             </li>
 
-            <li class="nav-item"><a class="nav-link">
+            <li class="nav-item"><a class="nav-link" href="meus_relatos.php">
                 <span data-feather="book-open" style="color: white;"></span>&nbsp;&nbsp;Meus Relatos
               </a>
             </li>
 
-            <li class="nav-item"><a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt nav_icon"></i>
-                <span data-feather="log-out" style="color: white;"></span>&nbsp;&nbsp;Log-out</a>
+            <li class="nav-item"><a class="nav-link" href="busca_pl.php">
+                <span data-feather="globe" style="color: white;"></span>&nbsp;&nbsp;Navegar
+              </a>
             </li>
 
-          </ul>
+            <li class="nav-item"><a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt nav_icon"></i>
+                <span data-feather="log-out" style="color: white;"></span>&nbsp;&nbsp;Sair</a>
+            </li>
         </div>
       </div>
     </div>
