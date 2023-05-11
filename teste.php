@@ -7,7 +7,7 @@ if(!isset($_SESSION)){
 
     $pesquisa = mysqli_real_escape_string($mysqli, $_GET['busca']); 
     
-    $sql_code = "SELECT * FROM relato WHERE relatoD LIKE '%$pesquisa%' OR titulo LIKE '%$pesquisa%'"; 
+    $sql_code = "SELECT * FROM relato WHERE relatoD LIKE '%$pesquisa%' OR titulo LIKE '%$pesquisa%' OR altura LIKE '%$pesquisa%' OR peso LIKE '%$pesquisa%' OR idade LIKE '%$pesquisa%' OR sexo LIKE '%$pesquisa%' OR observacao LIKE '%$pesquisa%'"; 
 
     $sql_query = $mysqli->query($sql_code) or die("ERRO ao consultar! " . $mysqli->error); 
 
@@ -39,8 +39,8 @@ if(!isset($_SESSION)){
               ?>
       </a>
 
-      <form class="d-flex" role="search">
-        <input name="busca" class="form-control me-2" type="search" placeholder="Search experience" aria-label="Search">
+      <form class="d-flex" role="search" action="busca_resultado_pl.php" metho="POST">
+        <input name="busca" class="form-control me-2" type="search" placeholder="Search story" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
 
