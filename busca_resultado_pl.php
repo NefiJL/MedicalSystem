@@ -4,13 +4,6 @@ include('protect.php');
 
 if(!isset($_SESSION)){
     session_start();
-
-    $pesquisa = mysqli_real_escape_string($mysqli, $_GET['busca']); 
-    
-    $sql_code = "SELECT * FROM relato WHERE relatoD LIKE '%$pesquisa%' OR titulo LIKE '%$pesquisa%' OR altura LIKE '%$pesquisa%' OR peso LIKE '%$pesquisa%' OR idade LIKE '%$pesquisa%' OR sexo LIKE '%$pesquisa%' OR observacao LIKE '%$pesquisa%'"; 
-
-    $sql_query = $mysqli->query($sql_code) or die("ERRO ao consultar! " . $mysqli->error); 
-
 }
 
 ?>
@@ -80,43 +73,63 @@ if(!isset($_SESSION)){
 </header>
 
 <body id="body">
+    <main>
+        <?php
+        if (!isset($_POST['busca'])) {
+        ?>
 
-  <main>
+        <?php
+        } else {
+            $pesquisa = mysqli_real_escape_string($mysqli, $_POST['busca']);
+
+            $sql_code = "SELECT * FROM relato WHERE relatoD LIKE '%$pesquisa%' OR titulo LIKE '%$pesquisa%' OR relatoD LIKE '%$pesquisa%'";
+
+            $sql_query = $mysqli->query($sql_code) or die ("ERRO ao consultar! " . $mysqli->error);
+
+            if ($sql_query->num_rows == 0) {
+        ?>
+                <p>Upss... Nenhum resultado encontrado</p>
+        <?php
+            } else {
+              while($dados == $sql_query->fetch_assoc()){
+                ?>
+           <div class="card border-dark text-bg-dark mb-3" style="max-width: 18rem; margin-top: 8.3%; margin-left: 3%; display: inline-block; width: 18rem; height: auto;">
+                <div class="card-body">
+                    <h5 class="card-title" style="text-align: center" name="titulo" id="tituloID"><b>
+                            <?php echo $row["titulo"]; ?>
+                        </b></h5>
+                    <p class="card-text" name="relato" id="relatoID">
+                        <?php echo $row["relatoD"]; ?>
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" name="altura" id="alturaID"><b>Altura:</b>
+                        <?php echo $row["altura"]; ?>Mt
+                    </li>
+                    <li class="list-group-item" name="peso" id="pesoID"><b>Peso:</b>
+                        <?php echo $row["peso"]; ?>Kg
+                    </li>
+                    <li class="list-group-item" name="idade" id="IdadeID"><b>Idade:</b>
+                        <?php echo $row["idade"]; ?>anos
+                    </li>
+                    <li class="list-group-item" name="sexo" id="sexoID"><b>Sexo:</b>
+                        <?php echo $row["sexo"]; ?>
+                    </li>
+                </ul>
+                <div class="card-body" style="text-align: center">
+                    <button class="btn btn-outline-primary" type="submit">Visualizar</button>
+                </div>
+            </div>
+        <?php
+        }
+    }
+}
+?>
+    </main>
+
+    <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="./js/feather.mim.js"></script>
+    <script type="text/javascript" src="./js/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="./js/menu.js"></script>
     
-      <div class="card border-dark text-bg-dark mb-3"
-        style="max-width: 18rem; margin-top: 8.3%; margin-left: 3%; display: inline-block; width: 18rem; height: auto;">
-        <div class="card-body">
-          <h5 class="card-title" style="text-align: center" name="titulo" id="tituloID"><b>
-             
-            </b></h5>
-          <p class="card-text" name="relato" id="relatoID">
-            
-          </p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item" name="altura" id="alturaID"><b>Altura:</b>
-            Mt
-          </li>
-          <li class="list-group-item" name="peso" id="pesoID"><b>Peso:</b>
-            Kg
-          </li>
-          <li class="list-group-item" name="idade" id="IdadeID"><b>Idade:</b>
-            anos
-          </li>
-          <li class="list-group-item" name="sexo" id="sexoID"><b>Sexo:</b>
-            
-          </li>
-        </ul>
-        <div class="card-body" style="text-align: center">
-          <button class="btn btn-lg btn-primary btn-block btn-animado" type="submit">Visualizar</button>
-        </div>
-      </div>
-    </div>
-   
-  </main>
-  <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
-  <script type="text/javascript" src="./js/feather.mim.js"></script>
-  <script type="text/javascript" src="./js/jquery-3.6.3.min.js"></script>
-  <script type="text/javascript" src="./js/menu.js"></script>
-
 </body>

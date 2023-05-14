@@ -4,17 +4,9 @@ include('protect.php');
 
 if(!isset($_SESSION)){
     session_start();
-
-    $pesquisa = mysqli_real_escape_string($mysqli, $_GET['busca']); 
-    
-    $sql_code = "SELECT * FROM relato WHERE relatoD LIKE '%$pesquisa%' OR titulo LIKE '%$pesquisa%' OR altura LIKE '%$pesquisa%' OR peso LIKE '%$pesquisa%' OR idade LIKE '%$pesquisa%' OR sexo LIKE '%$pesquisa%' OR observacao LIKE '%$pesquisa%'"; 
-
-    $sql_query = $mysqli->query($sql_code) or die("ERRO ao consultar! " . $mysqli->error); 
-
 }
 
 ?>
-
 <!DOCTYPE html>
 <html>
 
