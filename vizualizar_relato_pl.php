@@ -1,10 +1,23 @@
 <?php
 
-include('protect.php');
+session_start();
+require_once 'conexao.php';
 
-if(!isset($_SESSION)){
-    session_start();
-}
+    if (isset($_GET['relato_id'])) {
+      $relato_id = $_GET['relato_id'];
+      // Obtener la información del relato específico
+      $sql = "SELECT * FROM relato WHERE idR = '$relato_id'";
+      $result = $conexao->query($sql);
+      $row = $result->fetch_assoc();
+      $altura = $row["altura"];
+      $peso = $row["peso"];
+      $idade = $row["idade"];
+      $sexo = $row["sexo"];
+      $dataR = $row["dataR"];
+      $titulo = $row["titulo"];
+      $relato = $row["relatoD"];
+    }
+
 
 ?>
 
@@ -82,16 +95,16 @@ if(!isset($_SESSION)){
   <div class="row coluna">
     <div class="card">
       <div class="card-body" style="text-align: center;">
-        <h5 class="card-title">Fratura Do Pulso</h5>
+      <h1><?php echo $titulo; ?></h1>
         <p class="card-text" name="relato" id="relatoID"></p>
       </div>
       <div class="card-body d-flex justify-content-between">
-        <p><b>Altura:</b></p>
-        <p><b>Peso:</b></p>
+        <p><b>Altura: <?php echo $altura; ?> Mt </b></p>
+        <p><b>Peso: <?php echo $peso; ?> Kg </b></p>
       </div>
       <div class="card-body d-flex justify-content-between">
-        <p><b>Idade:</b></p>
-        <p><b>Sexo:</b></p>
+        <p><b>Idade:<?php echo $idade; ?> años </b></p>
+        <p><b>Sexo: <?php echo $sexo; ?> </b></p>
       </div>
     </div>
   </div>
