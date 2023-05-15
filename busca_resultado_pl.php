@@ -88,7 +88,7 @@ require_once 'conexao.php';
 
         if ($sql_query->num_rows == 0) {
     ?>
-            <p>Upss... Nenhum resultado encontrado</p>
+            <h1>Upss... Nenhum resultado encontrado</h1>
     <?php
         } else {
             while ($row = $sql_query->fetch_assoc()) {
