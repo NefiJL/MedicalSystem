@@ -8,6 +8,7 @@ $all_relato = $conexao->query($sql);
 
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -72,37 +73,38 @@ $all_relato = $conexao->query($sql);
     $count = 0;
     while ($row = mysqli_fetch_assoc($all_relato)) {
     ?>
-      <div class="card border-dark text-bg-dark mb-3" style="max-width: 18rem; margin-top: 8.3%; margin-left: 3%; display: inline-block; width: 18rem; height: auto;">
-<div class="card-body">
-<h5 class="card-title" style="text-align: center" name="titulo" id="tituloID"><b>
-<?php echo $row["titulo"]; ?>
-</b></h5>
-<p class="card-text" name="relato" id="relatoID">
-<?php echo $row["relatoD"]; ?>
-</p>
-</div>
-<ul class="list-group list-group-flush">
-<li class="list-group-item" name="altura" id="alturaID"><b>Altura:</b>
-<?php echo $row["altura"]; ?>Mt
-</li>
-<li class="list-group-item" name="peso" id="pesoID"><b>Peso:</b>
-<?php echo $row["peso"]; ?>Kg
-</li>
-<li class="list-group-item" name="idade" id="IdadeID"><b>Idade:</b>
-<?php echo $row["idade"]; ?>anos
-</li>
-<li class="list-group-item" name="sexo" id="sexoID"><b>Sexo:</b>
-<?php echo $row["sexo"]; ?>
-</li>
-</ul>
-<div class="card-body" style="text-align: center">
-<form method="GET" action="./vizualizar_relato_pl.php">
-<input type="hidden" name="relato_id" value="<?php echo $row['idR']; ?>">
-<button class="btn btn-primary" type="submit">Visualizar</button>
-</form>
-</div>
-</div>
-<?php
+    <div class="card border-dark text-bg-dark mb-3"
+      style="max-width: 18rem; margin-top: 8.3%; margin-left: 3%; display: inline-block; width: 18rem; height: auto;">
+      <div class="card-body">
+        <h5 class="card-title" style="text-align: center" name="titulo" id="tituloID"><b>
+            <?php echo $row["titulo"]; ?>
+          </b></h5>
+        <p class="card-text" name="relato" id="relatoID">
+          <?php echo $row["relatoD"]; ?>
+        </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" name="altura" id="alturaID"><b>Altura:</b>
+          <?php echo $row["altura"]; ?>Mt
+        </li>
+        <li class="list-group-item" name="peso" id="pesoID"><b>Peso:</b>
+          <?php echo $row["peso"]; ?>Kg
+        </li>
+        <li class="list-group-item" name="idade" id="IdadeID"><b>Idade:</b>
+          <?php echo $row["idade"]; ?>anos
+        </li>
+        <li class="list-group-item" name="sexo" id="sexoID"><b>Sexo:</b>
+          <?php echo $row["sexo"]; ?>
+        </li>
+      </ul>
+      <div class="card-body" style="text-align: center">
+        <form method="GET" action="./vizualizar_relato_pl.php">
+          <input type="hidden" name="relato_id" value="<?php echo $row['idR']; ?>">
+          <button class="btn btn-primary" type="submit">Visualizar</button>
+        </form>
+      </div>
+    </div>
+    <?php
  }
  ?>
 
@@ -112,4 +114,5 @@ $all_relato = $conexao->query($sql);
   <script type="text/javascript" src="./js/jquery-3.6.3.min.js"></script>
   <script type="text/javascript" src="./js/menu.js"></script>
 </body>
+
 </html>
