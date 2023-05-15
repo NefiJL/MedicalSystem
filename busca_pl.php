@@ -24,10 +24,12 @@ $all_relato = $conexao->query($sql);
   <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="./usuario_Pos_login.php">MedicalSystem</a>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search ">
-        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+
+      <form class="d-flex" role="search" action="busca_resultado_pl.php" metho="GET">
+        <input name="busca" class="form-control me-2" type="search" placeholder="Search story" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
         aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
