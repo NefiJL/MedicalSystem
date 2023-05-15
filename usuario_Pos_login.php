@@ -1,11 +1,11 @@
 <?php
-
 include('protect.php');
 
-if(!isset($_SESSION)){
+if (!isset($_SESSION)) {
     session_start();
 }
 
+require_once 'conexao.php';
 ?>
 
 <!DOCTYPE html>
@@ -31,9 +31,10 @@ if(!isset($_SESSION)){
               echo "<h3>" . $_SESSION["nome"] . "</h3>";
               ?>
       </a>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search ">
-        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+
+     <form class="d-flex" role="search" action="busca_resultado_pl.php" metho="GET">
+        <input name="busca" class="form-control me-2" type="search" placeholder="Search story" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"

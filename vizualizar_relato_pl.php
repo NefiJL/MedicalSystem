@@ -1,6 +1,9 @@
 <?php
 
 session_start();
+
+include('protect.php');
+
 require_once 'conexao.php';
 
     if (isset($_GET['relato_id'])) {
