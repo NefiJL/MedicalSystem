@@ -1,11 +1,11 @@
 <?php
-
 include('protect.php');
 
-if(!isset($_SESSION)){
+if (!isset($_SESSION)) {
     session_start();
 }
 
+require_once 'conexao.php';
 ?>
 
 <!DOCTYPE html>
@@ -73,59 +73,59 @@ if(!isset($_SESSION)){
 </header>
 
 <body id="body">
-    <main>
-        <?php
-        if (!isset($_POST['busca'])) {
-        ?>
+<main>
+    <?php
+    if (!isset($_GET['busca'])) {
+    ?>
 
-        <?php
+    <?php
+    } else {
+        $pesquisa = mysqli_real_escape_string($conexao, $_GET['busca']);
+
+        $sql_code = "SELECT * FROM relato WHERE relatoD LIKE '%$pesquisa%' OR titulo LIKE '%$pesquisa%' OR relatoD LIKE '%$pesquisa%'";
+
+        $sql_query = $conexao->query($sql_code) or die("ERRO ao consultar! " . $conexao->error);
+
+        if ($sql_query->num_rows == 0) {
+    ?>
+            <p>Upss... Nenhum resultado encontrado</p>
+    <?php
         } else {
-            $pesquisa = mysqli_real_escape_string($mysqli, $_POST['busca']);
-
-            $sql_code = "SELECT * FROM relato WHERE relatoD LIKE '%$pesquisa%' OR titulo LIKE '%$pesquisa%' OR relatoD LIKE '%$pesquisa%'";
-
-            $sql_query = $mysqli->query($sql_code) or die ("ERRO ao consultar! " . $mysqli->error);
-
-            if ($sql_query->num_rows == 0) {
-        ?>
-                <p>Upss... Nenhum resultado encontrado</p>
-        <?php
-            } else {
-              while($dados == $sql_query->fetch_assoc()){
-                ?>
-           <div class="card border-dark text-bg-dark mb-3" style="max-width: 18rem; margin-top: 8.3%; margin-left: 3%; display: inline-block; width: 18rem; height: auto;">
-                <div class="card-body">
-                    <h5 class="card-title" style="text-align: center" name="titulo" id="tituloID"><b>
-                            <?php echo $row["titulo"]; ?>
-                        </b></h5>
-                    <p class="card-text" name="relato" id="relatoID">
-                        <?php echo $row["relatoD"]; ?>
-                    </p>
+            while ($row = $sql_query->fetch_assoc()) {
+    ?>
+                <div class="card border-dark text-bg-dark mb-3" style="max-width: 18rem; margin-top: 8.3%; margin-left: 3%; display: inline-block; width: 18rem; height: auto;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="text-align: center" name="titulo" id="tituloID"><b>
+                                <?php echo $row["titulo"]; ?>
+                            </b></h5>
+                        <p class="card-text" name="relato" id="relatoID">
+                            <?php echo $row["relatoD"]; ?>
+                        </p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" name="altura" id="alturaID"><b>Altura:</b>
+                            <?php echo $row["altura"]; ?>Mt
+                        </li>
+                        <li class="list-group-item" name="peso" id="pesoID"><b>Peso:</b>
+                            <?php echo $row["peso"]; ?>Kg
+                        </li>
+                        <li class="list-group-item" name="idade" id="IdadeID"><b>Idade:</b>
+                            <?php echo $row["idade"]; ?>anos
+                        </li>
+                        <li class="list-group-item" name="sexo" id="sexoID"><b>Sexo:</b>
+                            <?php echo $row["sexo"]; ?>
+                        </li>
+                    </ul>
+                    <div class="card-body" style="text-align: center">
+                        <button class="btn btn-outline-primary" type="submit">Visualizar</button>
+                    </div>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item" name="altura" id="alturaID"><b>Altura:</b>
-                        <?php echo $row["altura"]; ?>Mt
-                    </li>
-                    <li class="list-group-item" name="peso" id="pesoID"><b>Peso:</b>
-                        <?php echo $row["peso"]; ?>Kg
-                    </li>
-                    <li class="list-group-item" name="idade" id="IdadeID"><b>Idade:</b>
-                        <?php echo $row["idade"]; ?>anos
-                    </li>
-                    <li class="list-group-item" name="sexo" id="sexoID"><b>Sexo:</b>
-                        <?php echo $row["sexo"]; ?>
-                    </li>
-                </ul>
-                <div class="card-body" style="text-align: center">
-                    <button class="btn btn-outline-primary" type="submit">Visualizar</button>
-                </div>
-            </div>
-        <?php
+    <?php
+            }
         }
     }
-}
-?>
-    </main>
+    ?>
+</main>
 
     <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
     <script type="text/javascript" src="./js/feather.mim.js"></script>

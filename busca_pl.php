@@ -98,7 +98,7 @@ $all_relato = $conexao->query($sql);
 <div class="card-body" style="text-align: center">
 <form method="GET" action="./vizualizar_relato_pl.php">
 <input type="hidden" name="relato_id" value="<?php echo $row['idR']; ?>">
-<button class="btn btn-outline-primary" type="submit">Visualizar</button>
+<button class="btn btn-primary" type="submit">Visualizar</button>
 </form>
 </div>
 </div>
