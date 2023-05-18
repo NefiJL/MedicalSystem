@@ -19,7 +19,7 @@
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -32,9 +32,11 @@
           </li>
         </ul>
 
-        <form class="d-flex" role="search" action="visitante/busca_resultado_V.php" metho="GET">
-        <input name="busca2" class="form-control me-2" type="search" placeholder="Search story" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <form class="d-flex" role="search" action="visitante/busca_resultado_V.php" method="GET">
+          <div class="input-group">
+            <input name="busca2" class="form-control me-2" type="search" placeholder="Search story" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </div>
         </form>
 
       </div>
