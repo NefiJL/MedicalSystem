@@ -1,11 +1,5 @@
 <?php
-include('protect.php');
-
-if (!isset($_SESSION)) {
-    session_start();
-}
-
-require_once 'conexao.php';
+require_once '../conexao.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,56 +10,37 @@ require_once 'conexao.php';
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>MedicalSystem</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="./css/styles.css">
-  <script src='./js/bootstrap.bundle.js'></script>
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <script src='../js/bootstrap.bundle.js'></script>
 </head>
 
 <header>
 
-  <nav class="navbar navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-    <a class="navbar-brand" href="./usuario_Pos_login.php">MedicalSystem</a>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search ">
-        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
-      </form>
+      <a class="navbar-brand" href="../index.php">MedicalSystem</a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
-        aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
-        aria-labelledby="offcanvasDarkNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-            aria-label="Close"></button>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="../login.php">
+           <span data-feather="user" style="color: white;"></span>&nbsp;&nbsp; Iniciar sessão</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../registro.php">
+            <span data-feather="user-plus" style="color: white;"></span>&nbsp;&nbsp;  Criar uma Conta</a>
+          </li>
+        </ul>
 
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <form class="d-flex" role="search" action="busca_resultado_V.php" metho="GET">
+        <input name="busca2" class="form-control me-2" type="search" placeholder="Search story" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
 
-            <li class="nav-item"><a class="nav-link" href="relato.php">
-                <span data-feather="book" style="color: white;"></span>&nbsp;&nbsp;Relatar
-              </a>
-            </li>
-
-            <li class="nav-item"><a class="nav-link" href="meus_relatos.php">
-                <span data-feather="book-open" style="color: white;"></span>&nbsp;&nbsp;Meus Relatos
-              </a>
-            </li>
-
-            <li class="nav-item"><a class="nav-link" href="busca_pl.php">
-                <span data-feather="globe" style="color: white;"></span>&nbsp;&nbsp;Navegar
-              </a>
-            </li>
-
-            <li class="nav-item"><a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt nav_icon"></i>
-                <span data-feather="log-out" style="color: white;"></span>&nbsp;&nbsp;Sair</a>
-            </li>
-        </div>
       </div>
     </div>
   </nav>
@@ -75,12 +50,12 @@ require_once 'conexao.php';
 <body id="body">
 <main>
     <?php
-    if (!isset($_GET['busca'])) {
+    if (!isset($_GET['busca2'])) {
     ?>
 
     <?php
     } else {
-        $pesquisa = mysqli_real_escape_string($conexao, $_GET['busca']);
+        $pesquisa = mysqli_real_escape_string($conexao, $_GET['busca2']);
 
         $sql_code = "SELECT * FROM relato WHERE relatoD LIKE '%$pesquisa%' OR titulo LIKE '%$pesquisa%' OR relatoD LIKE '%$pesquisa%'";
 
@@ -117,8 +92,11 @@ require_once 'conexao.php';
                         </li>
                     </ul>
                     <div class="card-body" style="text-align: center">
-                        <button class="btn btn-outline-primary" type="submit">Visualizar</button>
-                    </div>
+                     <form method="GET" action="./vizualizar_relato_pl.php">
+                      <input type="hidden" name="relato_id" value="<?php echo $row['idR']; ?>">
+                      <button class="btn btn-primary" type="submit">Visualizar</button>
+                    </form>
+                  </div>
                 </div>
     <?php
             }

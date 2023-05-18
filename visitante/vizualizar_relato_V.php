@@ -1,9 +1,4 @@
 <?php
-
-session_start();
-
-include('protect.php');
-
 require_once 'conexao.php';
 
     if (isset($_GET['relato_id'])) {
@@ -40,13 +35,10 @@ require_once 'conexao.php';
 <header>
 
   <nav class="navbar navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
+    <a class="navbar-brand" href="./index.php">MedicalSystem</a>
 
-      <a class="navbar-brand" href="#">
-        <?php
-              echo "<h3>" . $_SESSION["nome"] . "</h3>";
-              ?>
-      </a>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="buscar" aria-label="Search ">
         <button class="btn btn-outline-success" type="submit">Pesquisar</button>

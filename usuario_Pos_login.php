@@ -32,7 +32,7 @@ require_once 'conexao.php';
               ?>
       </a>
 
-     <form class="d-flex" role="search" action="busca_resultado_pl.php" metho="GET">
+      <form class="d-flex" role="search" action="busca_resultado_pl.php" metho="GET">
         <input name="busca" class="form-control me-2" type="search" placeholder="Search story" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
