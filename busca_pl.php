@@ -1,6 +1,9 @@
 <?php
-session_start();
+include('protect.php');
+
 require_once 'conexao.php';
+
+session_start();
 
 $sql = "SELECT * FROM relato";
 $all_relato = $conexao->query($sql);

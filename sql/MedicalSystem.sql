@@ -10,22 +10,22 @@ CREATE TABLE usuario(
     PRIMARY KEY(id)
 );
 
-INSERT INTO `usuario`(`Nome`, `Email`, `Especialidade`, `CRM`, `Senha`) VALUES ('Hector','hector@gmail.com','Oftalmologia','00000101010','123')
+/*INSERT INTO `usuario`(`Nome`, `Email`, `Especialidade`, `CRM`, `Senha`) VALUES ('Nefi','nefidavidl@gmail.com','Oftalmologia','00000101010','123')*/
 
-CREATE TABLE relato(
-
+USE medicalsystem;
+CREATE TABLE relato (
     idR INT NOT NULL AUTO_INCREMENT,
     altura VARCHAR(10) NOT NULL,
     peso VARCHAR(10) NOT NULL,
     idade INT NOT NULL,
-    sexo ENUM('Masculino', 'm','M', 'f', 'F', 'Femenino') NOT NULL,
+    sexo ENUM('Masculino', 'm', 'M', 'f', 'F', 'Femenino') NOT NULL,
     dataR DATE NOT NULL,
     titulo VARCHAR(500) NOT NULL,
     observacao VARCHAR(5000) NOT NULL,
     relatoD VARCHAR(10000) NOT NULL,
-    PRIMARY KEY(idR)
-
+    doctor_id INT NOT NULL,
+    PRIMARY KEY (idR),
+    FOREIGN KEY (doctor_id) REFERENCES usuario (doctor_id)
 );
 
-    UPDATE relato SET dataR = STR_TO_DATE(dataR, '%d/%m/%Y');
-
+    /*UPDATE relato SET dataR = STR_TO_DATE(dataR, '%d/%m/%Y');*/
