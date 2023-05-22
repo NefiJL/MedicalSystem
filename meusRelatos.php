@@ -41,6 +41,7 @@ if (!$all_relato) {
           aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
           aria-labelledby="offcanvasDarkNavbarLabel">
           <div class="offcanvas-header">
@@ -48,6 +49,7 @@ if (!$all_relato) {
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
               aria-label="Close"></button>
           </div>
+
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li class="nav-item">
@@ -55,16 +57,18 @@ if (!$all_relato) {
                   <span data-feather="book" style="color: white;"></span>&nbsp;&nbsp;Relatar
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="meus_relatos.php">
-                  <span data-feather="book-open" style="color: white;"></span>&nbsp;&nbsp;Meus Relatos
-                </a>
-              </li>
+
+              <li class="nav-item"><a class="nav-link" href="meusRelatos.php">
+                <span data-feather="book-open" style="color: white;"></span>&nbsp;&nbsp;Meus Relatos
+              </a>
+            </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="busca_pl.php">
                   <span data-feather="globe" style="color: white;"></span>&nbsp;&nbsp;Navegar
                 </a>
               </li>
+              
               <li class="nav-item">
                 <a class="nav-link" href="logout.php">
                   <i class="fas fa-sign-out-alt nav_icon"></i>

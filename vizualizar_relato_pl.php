@@ -1,5 +1,4 @@
 <?php
-
 include('protect.php');
 
 require_once 'conexao.php';
@@ -71,7 +70,7 @@ require_once 'conexao.php';
               </a>
             </li>
 
-            <li class="nav-item"><a class="nav-link" href="meus_relatos.php">
+            <li class="nav-item"><a class="nav-link" href="meusRelatos.php">
                 <span data-feather="book-open" style="color: white;"></span>&nbsp;&nbsp;Meus Relatos
               </a>
             </li>
