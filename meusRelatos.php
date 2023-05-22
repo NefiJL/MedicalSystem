@@ -1,14 +1,8 @@
 <?php
-
 include 'protect.php';
 require_once 'conexao.php';
 
-if (!isset($_SESSION['doctor_id'])) {
-  // Redirigir al usuario a la página de inicio de sesión o mostrar un mensaje de error
-  exit("No se ha iniciado sesión como doctor.");
-}
-
-$doctor_id = $_SESSION['doctor_id'];
+$doctor_id = $_SESSION['id'];
 
 $sql = "SELECT * FROM relato WHERE doctor_id = '$doctor_id'";
 $all_relato = $conexao->query($sql);
