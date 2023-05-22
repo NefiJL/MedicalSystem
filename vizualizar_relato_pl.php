@@ -1,30 +1,29 @@
 <?php
 include('protect.php');
-
 require_once 'conexao.php';
 
-    if (isset($_GET['relato_id'])) {
-      $relato_id = $_GET['relato_id'];
-      // Obtener la información del relato específico
-      $sql = "SELECT * FROM relato WHERE idR = '$relato_id'";
-      $result = $conexao->query($sql);
-      $row = $result->fetch_assoc();
-      $altura = $row["altura"];
-      $peso = $row["peso"];
-      $idade = $row["idade"];
-      $sexo = $row["sexo"];
-      $dataR = $row["dataR"];
-      $titulo = $row["titulo"];
-      $relato = $row["relatoD"];
-      $usuario_id = $row["doctor_id"];
-    }
+if (isset($_GET['relato_id'])) {
+  $relato_id = $_GET['relato_id'];
+  // Obtener la información del relato específico
+  $sql = "SELECT * FROM relato WHERE idR = '$relato_id'";
+  $result = $conexao->query($sql);
+  $row = $result->fetch_assoc();
+  $altura = $row["altura"];
+  $peso = $row["peso"];
+  $idade = $row["idade"];
+  $sexo = $row["sexo"];
+  $dataR = $row["dataR"];
+  $titulo = $row["titulo"];
+  $relato = $row["relatoD"];
+  $usuario_id = $row["doctor_id"];
+}
 
-    if (isset($usuario_id)) {
-      $sql = "SELECT * FROM usuario WHERE id = '". $usario_id."'";
-      $result = $conexao->query($sql);
-      $row = $result->fetch_assoc();
-      $nome = $row["nome"];
-    }
+if (isset($usuario_id)) {
+  $sql = "SELECT * FROM usuario WHERE id = '". $usuario_id."'";
+  $result = $conexao->query($sql);
+  $row = $result->fetch_assoc();
+  $nome = $row["nome"];
+}
 ?>
 
 <!DOCTYPE html>
@@ -118,9 +117,9 @@ require_once 'conexao.php';
   <div class="" style="margin-left: 10%; margin-right: 10%;">
     <div class="card mx-auto bg-dark">
       <div class="card-body text-white text-justify">
-        <p class="card-text"><b><?php echo $relato;?></b></p>
+        <p class="card-text"><b><?php echo $relato;?></b></p><br><br>
 
-        <p class="card-text"><b><?php echo $nome;?></b></p>
+        <p class="card-text" style="margin-left: 90%;"><b>Escrito por: <?php echo $nome;?></b></p>
       
         <a href="busca_pl.php" class="btn btn-primary botao">Voltar</a>
       </div>
