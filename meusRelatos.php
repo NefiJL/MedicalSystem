@@ -2,16 +2,19 @@
 include 'protect.php';
 require_once 'conexao.php';
 
-$doctor_id = $_SESSION['id'];
+if (!isset($_SESSION['id'])) {
+  echo "Você ainda não fez uma pulicação.";
+} else {
+  $doctor_id = $_SESSION['id'];
 
-$sql = "SELECT * FROM relato WHERE doctor_id = '$doctor_id'";
-$all_relato = $conexao->query($sql);
+  $sql = "SELECT * FROM relato WHERE doctor_id = '$doctor_id'";
+  $all_relato = $conexao->query($sql);
 
-if (!$all_relato) {
-  exit("Error al ejecutar la consulta: " . $conexao->error);
+  if (!$all_relato) {
+    exit("Error al ejecutar la consulta: " . $conexao->error);
+  }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 
