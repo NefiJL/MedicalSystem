@@ -117,7 +117,8 @@ mysqli_close($conexao);
             <input type="text" class="form-control" id="sexo" name="sexo" placeholder="F (para femenino) ou M (para masculino)" required>
 
             <label for="data">Data:</label>
-            <input type="date" class="form-control" id="dataR" name="dataR" placeholder="dd/mm/aa" required>
+            <input type="date" class="form-control" id="dataR" name="dataR" placeholder="dd/mm/aa" required
+            min="1800-01-01" max="<?php echo date('Y-m-d'); ?>" pattern="\d{1,2}/\d{1,2}/\d{2}">
 
             <label for="titulo">Titulo:</label>
             <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo do relato" required>
