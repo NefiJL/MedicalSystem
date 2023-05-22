@@ -16,6 +16,7 @@ require_once 'conexao.php';
       $dataR = $row["dataR"];
       $titulo = $row["titulo"];
       $relato = $row["relatoD"];
+      
     }
 ?>
 
@@ -37,7 +38,7 @@ require_once 'conexao.php';
   <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
 
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="./usuario_Pos_login.php">
         <?php
               echo "<h3>" . $_SESSION["nome"] . "</h3>";
               ?>
@@ -112,7 +113,7 @@ require_once 'conexao.php';
       <div class="card-body text-white text-justify">
         <p class="card-text"><b><?php echo $relato;?></b></p>
       
-        <a href="usuario_Pos_login.php" class="btn btn-primary botao">Voltar</a>
+        <a href="busca_pl.php" class="btn btn-primary botao">Voltar</a>
       </div>
   </div>
 
