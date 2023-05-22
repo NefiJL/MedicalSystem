@@ -129,7 +129,8 @@ require_once 'conexao.php';
         fraturas do pulso no futuro, como usar equipamentos de proteção adequados durante a prática de esportes ou
         atividades de alto
         risco e manter uma boa postura e ergonomia ao trabalhar com as mãos e pulsos por longos períodos. </p>
-      <a href="./Busca_pos_login.php" class="btn btn-primary botao">Voltar</a>
+      
+        <a href="usuario_Pos_login.php" class="btn btn-primary botao">Voltar</a>
 
     </div>
 
