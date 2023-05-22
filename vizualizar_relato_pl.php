@@ -16,7 +16,14 @@ require_once 'conexao.php';
       $dataR = $row["dataR"];
       $titulo = $row["titulo"];
       $relato = $row["relatoD"];
-      
+      $usuario_id = $row["doctor_id"];
+    }
+
+    if (isset($usuario_id)) {
+      $sql = "SELECT * FROM usuario WHERE id = '". $usario_id."'";
+      $result = $conexao->query($sql);
+      $row = $result->fetch_assoc();
+      $nome = $row["nome"];
     }
 ?>
 
@@ -112,6 +119,8 @@ require_once 'conexao.php';
     <div class="card mx-auto bg-dark">
       <div class="card-body text-white text-justify">
         <p class="card-text"><b><?php echo $relato;?></b></p>
+
+        <p class="card-text"><b><?php echo $nome;?></b></p>
       
         <a href="busca_pl.php" class="btn btn-primary botao">Voltar</a>
       </div>
