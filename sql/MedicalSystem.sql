@@ -25,7 +25,7 @@ CREATE TABLE relato (
     relatoD VARCHAR(10000) NOT NULL,
     doctor_id INT NOT NULL,
     PRIMARY KEY (idR),
-    FOREIGN KEY (doctor_id) REFERENCES usuario (doctor_id)
+    FOREIGN KEY (doctor_id) REFERENCES usuario (id)
 );
 
     /*UPDATE relato SET dataR = STR_TO_DATE(dataR, '%d/%m/%Y');*/
