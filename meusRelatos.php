@@ -1,20 +1,27 @@
-<?php
-include 'protect.php';
-require_once 'conexao.php';
+<div id="texto" style="margin-top: 4%;">
+  <?php
+  include 'protect.php';
+  require_once 'conexao.php';
 
-if (!isset($_SESSION['id'])) {
-  echo "Você ainda não fez uma pulicação.";
-} else {
-  $doctor_id = $_SESSION['id'];
-
-  $sql = "SELECT * FROM relato WHERE doctor_id = '$doctor_id'";
+  $sql = "SELECT * FROM relato WHERE doctor_id = '".$_SESSION['id']."'";
   $all_relato = $conexao->query($sql);
 
-  if (!$all_relato) {
-    exit("Error al ejecutar la consulta: " . $conexao->error);
+  if ($all_relato->num_rows == 0) {
+    echo "Se anima a realizar uma publicação!<br>Dessa forma, você podera ver as suas histórias nesta secção da página.";
+  } else  {
+    $doctor_id = $_SESSION['id'];
+
+    $sql = "SELECT * FROM relato WHERE doctor_id = '$doctor_id'";
+    $all_relato = $conexao->query($sql);
+
+    if (!$all_relato) {
+      exit("Error al ejecutar la consulta: " . $conexao->error);
+    }
   }
-}
-?>
+  ?>
+</div>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -85,7 +92,7 @@ if (!isset($_SESSION['id'])) {
     </nav>
   </header>
 
-  <main>
+<main>
     <?php
     $count = 0;
     while ($row = $all_relato->fetch_assoc()) {
