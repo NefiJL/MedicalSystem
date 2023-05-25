@@ -121,7 +121,7 @@
           </li>
         </ul>
         <div class="card-body" style="text-align: center">
-          <form method="GET" action="./vizualizar_relato_pl.php">
+          <form method="GET" action="./visualizar_meu_relato_pl.php">
             <input type="hidden" name="relato_id" value="<?php echo $row['idR']; ?>">
             <button class="btn btn-primary" type="submit">Visualizar</button>
           </form>

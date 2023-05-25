@@ -119,11 +119,13 @@ if (isset($usuario_id)) {
       <div class="card-body text-white text-justify">
         <p class="card-text"><b><?php echo $relato;?></b></p><br><br>
 
-        <p class="card-text" style="margin-left: 90%;"><b>Escrito por: <?php echo $nome;?></b></p>
-      
-        <a href="busca_pl.php" class="btn btn-primary botao">Voltar</a>
-        
+        <p class="card-text" style="margin-left: 90%;"><b>Escrito por: <?php echo $nome;?></b></p><br>
+
+       <div style="display: flex; justify-content: space-between;">
+          <a style="margin-right: auto;" href="meusRelatos.php" class="btn btn-primary botao">Voltar</a>
+          <a style="margin-left: auto;" href="#" class="btn btn-light botao">Editar</a>  
       </div>
+
   </div>
 
     <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
