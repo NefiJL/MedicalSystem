@@ -5,7 +5,7 @@ $bancodedados = "medicalsystem";
 $usuario = "root";
 $senha = "";
 
-$conexao = mysqli_connect($hostname, $usuario, $senha, $bancodedados) or die ("Não foi possivel conectar")
+$conexao = mysqli_connect($hostname, $usuario, $senha, $bancodedados) or die ("Não foi possivel conectar");
 
 //if ($mysqli->connect_errno) {
 

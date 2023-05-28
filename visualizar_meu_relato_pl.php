@@ -2,27 +2,41 @@
 include('protect.php');
 require_once 'conexao.php';
 
+// Verificar si se ha proporcionado un valor para 'relato_id'
 if (isset($_GET['relato_id'])) {
-  $relato_id = $_GET['relato_id'];
-  // Obtener la información del relato específico
-  $sql = "SELECT * FROM relato WHERE idR = '$relato_id'";
-  $result = $conexao->query($sql);
+  $relato_id = mysqli_real_escape_string($conexao, $_GET['relato_id']);
+  
+  // Obtener la información del relato específico utilizando una sentencia preparada
+  $sql = "SELECT * FROM relato WHERE idR = ?";
+  $stmt = $conexao->prepare($sql);
+  $stmt->bind_param("i", $relato_id);
+  $stmt->execute();
+  $result = $stmt->get_result();
   $row = $result->fetch_assoc();
-  $altura = $row["altura"];
-  $peso = $row["peso"];
-  $idade = $row["idade"];
-  $sexo = $row["sexo"];
-  $dataR = $row["dataR"];
-  $titulo = $row["titulo"];
-  $relato = $row["relatoD"];
-  $usuario_id = $row["doctor_id"];
-}
-
-if (isset($usuario_id)) {
-  $sql = "SELECT * FROM usuario WHERE id = '". $usuario_id."'";
-  $result = $conexao->query($sql);
-  $row = $result->fetch_assoc();
-  $nome = $row["nome"];
+  
+  // Verificar si se encontró el relato
+  if ($row) {
+    $altura = $row["altura"];
+    $peso = $row["peso"];
+    $idade = $row["idade"];
+    $sexo = $row["sexo"];
+    $dataR = $row["dataR"];
+    $titulo = $row["titulo"];
+    $observacao = $row["observacao"];
+    $relato = $row["relatoD"];
+    $usuario_id = $row["doctor_id"];
+    
+    // Obtener el nombre del usuario utilizando una sentencia preparada
+    if (isset($usuario_id)) {
+      $sql = "SELECT * FROM usuario WHERE id = ?";
+      $stmt = $conexao->prepare($sql);
+      $stmt->bind_param("i", $usuario_id);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $row_usuario = $result->fetch_assoc();
+      $nome = $row_usuario["nome"];
+    }
+  }
 }
 ?>
 
@@ -96,43 +110,52 @@ if (isset($usuario_id)) {
 </header>
 
 <body>
-
   <div class="row coluna" style="margin-left: 10%">
-  <div class="card mx-auto bg-dark">
-    <div class="card-body text-white" style="text-align: center;">
-      <h1><?php echo $titulo; ?></h1>
-      <p class="card-text" name="relato" id="relatoID"></p>
+    <div class="card mx-auto bg-dark">
+      <div class="card-body text-white" style="text-align: center;">
+        <h1><?php echo $titulo; ?></h1>
+        <p class="card-text" name="relato" id="relatoID"></p>
+      </div>
+      <div class="card-body d-flex justify-content-between text-white">
+        <p><b>Altura: <?php echo $altura; ?> Mt </b></p>
+        <p><b>Peso: <?php echo $peso; ?> Kg </b></p>
+      </div>
+      <div class="card-body d-flex justify-content-between text-white">
+        <p><b>Idade: <?php echo $idade; ?> años </b></p>
+        <p><b>Sexo: <?php echo $sexo; ?> </b></p>
+      </div>
     </div>
-    <div class="card-body d-flex justify-content-between text-white">
-      <p><b>Altura: <?php echo $altura; ?> Mt </b></p>
-      <p><b>Peso: <?php echo $peso; ?> Kg </b></p>
-    </div>
-    <div class="card-body d-flex justify-content-between text-white">
-      <p><b>Idade: <?php echo $idade; ?> años </b></p>
-      <p><b>Sexo: <?php echo $sexo; ?> </b></p>
-    </div>
+  </div><br>
+
+  <div class="" style="margin-left: 10%; margin-right: 10%;">
+    <div class="card mx-auto bg-dark text-white" >
+      <h1 style="text-align: center;">Observações</h1>
+      <div class="card-body text-white text-justify">
+      <p class="card-text"><b><?php echo $observacao; ?></b></p>
   </div>
-</div><br>
+    </div>
+      </div><br><br>
 
   <div class="" style="margin-left: 10%; margin-right: 10%;">
     <div class="card mx-auto bg-dark">
       <div class="card-body text-white text-justify">
-        <p class="card-text"><b><?php echo $relato;?></b></p><br><br>
+        <p class="card-text"><b><?php echo $relato; ?></b></p><br><br>
+        <p class="card-text" style="margin-left: 90%;"><b>Escrito por: <?php echo $nome; ?></b></p><br>
 
-        <p class="card-text" style="margin-left: 90%;"><b>Escrito por: <?php echo $nome;?></b></p><br>
-
-       <div style="display: flex; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between;">
           <a style="margin-right: auto;" href="meusRelatos.php" class="btn btn-primary botao">Voltar</a>
-          <a style="margin-left: auto;" href="#" class="btn btn-light botao">Editar</a>  
+          <form action="editar.php" method="GET">
+            <input type="hidden" name="relato_id" value="<?php echo $row['idR']; ?>">
+            <button type="submit" class="btn btn-light botao">Editar</button>
+          </form>
+        </div>
       </div>
-
+    </div>
   </div>
 
-    <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
-    <script type="text/javascript" src="./js/feather.mim.js"></script>
-    <script type="text/javascript" src="./js/jquery-3.6.3.min.js"></script>
-    <script type="text/javascript" src="./js/menu.js"></script>
-
+  <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
+  <script type="text/javascript" src="./js/feather.mim.js"></script>
+  <script type="text/javascript" src="./js/jquery-3.6.3.min.js"></script>
+  <script type="text/javascript" src="./js/menu.js"></script>
 </body>
-
 </html>

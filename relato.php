@@ -113,8 +113,11 @@ mysqli_close($conexao);
             <label for="idade">Idade:</label>
             <input type="text" class="form-control" id="idade" name="idade" placeholder="Exemplo: 20" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
 
-            <label for="sexo">Sexo:</label>
-            <input type="text" class="form-control" id="sexo" name="sexo" placeholder="F (para femenino) ou M (para masculino)" required>
+            <label for="sexo">Sexo: </label>
+            <select class="form-control" id="sexo" name="sexo" style="width: 50%" required>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+            </select><br>
 
             <label for="data">Data:</label>
             <input type="date" class="form-control" id="dataR" name="dataR" placeholder="dd/mm/aa" required
