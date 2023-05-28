@@ -129,7 +129,7 @@ if (isset($_GET['relato_id'])) {
 
   <div class="" style="margin-left: 10%; margin-right: 10%;">
     <div class="card mx-auto bg-dark text-white" >
-      <h1 style="text-align: center;">Observações</h1>
+      <h3 style="text-align: center;">Observações</h3>
       <div class="card-body text-white text-justify">
       <p class="card-text"><b><?php echo $observacao; ?></b></p>
   </div>
