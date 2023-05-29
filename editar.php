@@ -3,19 +3,19 @@ include('protect.php');
 
 require_once 'conexao.php';
 
-// Verificar si se ha proporcionado un valor para 'relato_id'
+// Verificar se foi fornecido um valor para 'relato_id'
 if (isset($_GET['relato_id'])) {
   $relato_id = mysqli_real_escape_string($conexao, $_GET['relato_id']);
-  
-  // Obtener la información del relato específico utilizando una sentencia preparada
+
+  // Obter as informações do relato específico usando uma declaração preparada
   $sql = "SELECT * FROM relato WHERE idR = ?";
   $stmt = $conexao->prepare($sql);
   $stmt->bind_param("i", $relato_id);
   $stmt->execute();
   $result = $stmt->get_result();
   $row = $result->fetch_assoc();
-  
-  // Verificar si se encontró el relato
+
+  // Verificar se o relato foi encontrado
   if ($row) {
     $altura = $row["altura"];
     $peso = $row["peso"];
@@ -24,9 +24,10 @@ if (isset($_GET['relato_id'])) {
     $dataR = $row["dataR"];
     $titulo = $row["titulo"];
     $relato = $row["relatoD"];
+    $observacao = $row["observacao"];
     $usuario_id = $row["doctor_id"];
-    
-    // Obtener el nombre del usuario utilizando una sentencia preparada
+
+    // Obter o nome do usuário usando uma declaração preparada
     if (isset($usuario_id)) {
       $sql = "SELECT * FROM usuario WHERE id = ?";
       $stmt = $conexao->prepare($sql);
@@ -52,44 +53,78 @@ if (isset($_GET['relato_id'])) {
   <script src='./js/bootstrap.bundle.js'></script>
 </head>
 <body>
+
   <div class="container">
     <h1>Editar Relato</h1>
     <form method="POST" action="salvar_edicao.php">
       <div class="mb-3">
         <label for="altura" class="form-label">Altura</label>
-        <input type="text" class="form-control" id="altura" name="altura" value="<?php echo $altura; ?>" required>
+        <input type="text" class="form-control" id="altura" name="altura" value="<?php echo $altura; ?>" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode === 46" required>
       </div>
+
       <div class="mb-3">
         <label for="peso" class="form-label">Peso</label>
-        <input type="text" class="form-control" id="peso" name="peso" value="<?php echo $peso; ?>" required>
+        <input type="text" class="form-control" id="peso" name="peso" value="<?php echo $peso; ?>" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode === 46" required>
       </div>
       <div class="mb-3">
         <label for="idade" class="form-label">Idade</label>
-        <input type="number" class="form-control" id="idade" name="idade" value="<?php echo $idade; ?>" required>
+        <input type="number" class="form-control" id="idade" name="idade" value="<?php echo $idade; ?>" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
       </div>
+
       <div class="mb-3">
         <label for="sexo" class="form-label">Sexo</label>
         <select class="form-select" id="sexo" name="sexo" required>
           <option value="Masculino" <?php if ($sexo === 'Masculino') echo 'selected'; ?>>Masculino</option>
-          <option value="Femenino" <?php if ($sexo === 'Femenino') echo 'selected'; ?>>Femenino</option>
+          <option value="Feminino" <?php if ($sexo === 'Feminino') echo 'selected'; ?>>Feminino</option>
         </select>
       </div>
+
       <div class="mb-3">
         <label for="titulo" class="form-label">Título</label>
         <input type="text" class="form-control" id="titulo" name="titulo" value="<?php echo $titulo; ?>" required>
       </div>
       <div class="mb-3">
         <label for="observacao" class="form-label">Observação</label>
-        <textarea class="form-control" id="observacao" name="observacao" rows="4" required><?php echo $relato; ?></textarea>
+        <textarea class="form-control" id="observacao" name="observacao" rows="4" required><?php echo $observacao; ?></textarea>
       </div>
+
       <div class="mb-3">
         <label for="relato" class="form-label">Relato</label>
         <textarea class="form-control" id="relato" name="relato" rows="8" required><?php echo $relato; ?></textarea>
       </div>
-      <input type="hidden" name="relato_id" value="<?php echo $relato_id; ?>">
-      <button type="submit" class="btn btn-primary">Guardar cambios</button>
-    </form>
+
+      <div>
+        <input type="hidden" name="relato_id" value="<?php echo $relato_id; ?>">
+        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+      </form>
+        <form method="POST" action="eliminar_publicacao.php">
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" style="margin-left:75%; margin-top: -8%">Eliminar publicación</button>
+      </form>
+    </div>
   </div>
+
+
+  <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar eliminación</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ¿Estás seguro de que deseas eliminar esta publicación?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <form method="POST" action="eliminar_publicacao.php">
+            <input type="hidden" name="relato_id" value="<?php echo $relato_id; ?>">
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
   <script type="text/javascript" src="./js/feather.mim.js"></script>
   <script type="text/javascript" src="./js/jquery-3.6.3.min.js"></script>
