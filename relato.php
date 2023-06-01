@@ -81,7 +81,7 @@ mysqli_close($conexao);
     <title>MedicalSystem</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="./css/relato.css">
+    <link rel="stylesheet" type="text/css" href="./css/relato_teste.css">
 </head>
 
 <header>
@@ -101,7 +101,7 @@ mysqli_close($conexao);
 
     <form method="POST">
 
-        <div class="mb-3 texto">
+        <div class="mb-3 texto backgroundR">
             <h1 class="paciente">Dados do paciente</h1>
 
             <label for="altura">Altura (M):</label>
@@ -127,22 +127,22 @@ mysqli_close($conexao);
             <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo do relato" required>
         </div>
 
-        <div class="mb-3 texto">
+        <div class="mb-3 texto observaçao">
             <label for="observacao" class="form-label" style="margin-left: 50%;">Obsevações</label>
             <textarea class="form-control" id="observacao" name="observacao"></textarea>
         </div>
 
-        <div class="mb-3 texto">
+        <div class="mb-3 texto relato">
             <label for="relato" class="form-label" style="margin-left: 50%;">Faça seu relato</label>
-            <textarea class="form-control" id="relatoD" name="relatoD" rows="20" required></textarea>
-        </div>
+            <textarea class="form-control" id="relatoD" name="relatoD" rows="15" required></textarea>
+        
 
         <div style="text-align: center; margin-top: -30px;">
 
             <input id="btn" type="submit" value="Publicar" style="margin-left: 50px; background-color: black;">
 
         </div>
-
+        </div>
     </form>
 
     <script src='./js/bootstrap.bundle.js'></script>

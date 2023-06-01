@@ -34,8 +34,8 @@
 
         <form class="d-flex" role="search" action="visitante/busca_resultado_V.php" method="GET">
           <div class="input-group">
-            <input name="busca2" class="form-control me-2" type="search" placeholder="Search story" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input name="busca2" class="form-control me-2" type="search" placeholder="Faça uma pesquisa" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Pesquisar</button>
           </div>
         </form>
 

@@ -50,6 +50,7 @@ if (isset($_GET['relato_id'])) {
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  <link rel="stylesheet" type="text/css" href="./css/editar.css">
   <script src='./js/bootstrap.bundle.js'></script>
 </head>
 <header>
@@ -58,10 +59,10 @@ if (isset($_GET['relato_id'])) {
             <a class="navbar-brand" href="./#">MedicalSystem</a>
     </nav>
 </header>
-<body>
+<body style="background-color: #f5f5f5;">
 
   <div style="margin-top: 5%;">
-  <div class="container">
+  <div class="container backgroundR">
     <h1>Editar Relato</h1>
     <form method="POST" action="salvar_edicao.php">
       <div class="mb-3">
