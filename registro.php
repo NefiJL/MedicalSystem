@@ -126,9 +126,113 @@ mysqli_close($conexao);
 
                 <div class="inputContainer">
 
-                    <input type="text" id="inputEspecialidade" class="input" name="especialidade" placeholder="a" required>
-                    <label for="inputEspecialidade" class="label">Especialidade</label>
-
+                <select class="form-select" aria-label="Default select example" placeholder="a" required>
+                    <option selected>Especialidade</option>
+                    <option value="1">Alergista</option>
+                    <option value="2">Alergista pediátrico</option>
+                    <option value="3">Anátomopatologista</option>
+                    <option value="4">Anestesiologista</option>
+                    <option value="5">Angiologista</option>
+                    <option value="6">Cardiologista</option>
+                    <option value="7">Cardiologista pediátrico</option>
+                    <option value="8">Cirurgião buco-maxilo-facial</option>
+                    <option value="9">Cirurgião cardiovascular</option>
+                    <option value="10">Cirurgião cranio-=maxilo-facial</option>
+                    <option value="11">Cirurgião da mão</option>
+                    <option value="12">Cirurgião de cabeça e pescoço</option>
+                    <option value="13">Cirurgião do aparelho digestivo</option>
+                    <option value="14">Cirurgião geral</option>
+                    <option value="15">Cirurgião oncológico</option>
+                    <option value="16">Cirurgião pediátrico</option>
+                    <option value="17">Cirurgião plástico</option>
+                    <option value="18">Cirurgião torácico</option>
+                    <option value="19">Cirurgião vascular</option>
+                    <option value="20">Coloproctologista</option>
+                    <option value="21">Dentista</option>
+                    <option value="22">Dermatologista</option>
+                    <option value="23">Educador Fisico</option>
+                    <option value="24">Endocrinologista</option>
+                    <option value="25">Endocrinologista pediátrico</option>
+                    <option value="26">Endoscopista</option>
+                    <option value="27">Enfermeiro</option>
+                    <option value="28">Especialista em Administração em Saúde</option>
+                    <option value="29">Especialista em Biomedicina</option>
+                    <option value="30">Especialista em Clínica Médica</option>
+                    <option value="31">Especialista em Diagnóstico por imagem</option>
+                    <option value="32">Especialista em Dor</option>
+                    <option value="33">Especialista em Harmonização orofacial</option>
+                    <option value="34">Especialista em Medicina do adolescente</option>
+                    <option value="35">Especialista em Medicina Estética</option>
+                    <option value="36">Especialista em Medicina Fisica e Reabilitação</option>
+                    <option value="37">Especialista em Medicina Nuclear</option>
+                    <option value="38">Especialista em Medicina Preventiva</option>
+                    <option value="39">Especialista em Neonatologia</option>
+                    <option value="40">Especialista em Reprodução Humana</option>
+                    <option value="41">Especialista em Ultrassonografia</option>
+                    <option value="42">Fisioterapeuta</option>
+                    <option value="43">Fonoaudiólogo</option>
+                    <option value="44">Gastroenterologista</option>
+                    <option value="45">Gastroenterologista pediátrico</option>
+                    <option value="46">Generalista</option>
+                    <option value="47">Geneticista</option>
+                    <option value="48">Geriatra</option>
+                    <option value="49">Ginecologista</option>
+                    <option value="50">Hematologista</option>
+                    <option value="51">Hematologista pediátrico</option>
+                    <option value="52">Hepatologista</option>
+                    <option value="53">Homeopata</option>
+                    <option value="54">Infectologista</option>
+                    <option value="55">Infectologista pediátrico</option>
+                    <option value="56">Intensivista</option>
+                    <option value="57">Mastologista</option>
+                    <option value="58">Médico Acupunturista</option>
+                    <option value="59">Médico citopatologista</option>
+                    <option value="60">Médico clinico geral</option>
+                    <option value="61">Médico de emergência</option>
+                    <option value="62">Médico de família</option>
+                    <option value="63">Médico de tráfego</option>
+                    <option value="64">Médico do esporte</option>
+                    <option value="65">Médico do Sono</option>
+                    <option value="66">Médico do trabalho</option>
+                    <option value="67">Médico hiperbarista</option>
+                    <option value="68">Médico perito</option>
+                    <option value="69">Nefrologista</option>
+                    <option value="70">Nefrologista pediátrico</option>
+                    <option value="71">Neurocirurgião</option>
+                    <option value="72">Neurofisiologista</option>
+                    <option value="73">Neurologista</option>
+                    <option value="74">Neurologista pediátrico</option>
+                    <option value="75">Nutricionista</option>
+                    <option value="76">Nutrólogo</option>
+                    <option value="77">Odontopediatra</option>
+                    <option value="78">Oftalmologista</option>
+                    <option value="79">Oncologista</option>
+                    <option value="80">Ortodontista</option>
+                    <option value="81">Ortopedista - Traumatologista</option>
+                    <option value="82">Osteopata</option>
+                    <option value="83">Otorrino</option>
+                    <option value="84">Patologista clínico</option>
+                    <option value="85">Pediatra</option>
+                    <option value="86">Pneumologista</option>
+                    <option value="87">Pneumologista pediátrico</option>
+                    <option value="88">Podologista</option>
+                    <option value="89">Psicanalista</option>
+                    <option value="90">Psicólogo</option>
+                    <option value="91">Psicopedagogo</option>
+                    <option value="92">Psiquiatra</option>
+                    <option value="93">Quiropraxista</option>
+                    <option value="94">Radiologista</option>
+                    <option value="95">Radioterapeuta</option>
+                    <option value="96">Reumatologista</option>
+                    <option value="97">Reumatologista pediátrico</option>
+                    <option value="98">Sexólogo</option>
+                    <option value="99">Técnico em Métodos Gráficos em Cardiologia</option>
+                    <option value="100">Técnico em radiologia</option>
+                    <option value="101">Técnico em Saúde bucal</option>
+                    <option value="102">Terapeuta complementar</option>
+                    <option value="103">terapeuta ocupacional</option>
+                    <option value="104">Urologista</option>
+                    </select>
                 </div>
 
                 <div class="inputContainer">
