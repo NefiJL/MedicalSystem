@@ -81,7 +81,7 @@ mysqli_close($conexao);
     <title>MedicalSystem</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="./css/relato_teste.css">
+    <link rel="stylesheet" type="text/css" href="./css/relato.css">
 </head>
 
 <header>
@@ -111,13 +111,13 @@ mysqli_close($conexao);
             <input type="text" class="form-control" id="peso" name="peso" placeholder="Exemplo: 65.4" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode === 46" required>
 
             <label for="idade">Idade:</label>
-            <input type="text" class="form-control" id="idade" name="idade" placeholder="Exemplo: 20" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+            <input type="text" class="form-control" id="idade" name="idade" placeholder="Exemplo: 20" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required><br>
 
             <label for="sexo">Sexo: </label>
             <select class="form-control" id="sexo" name="sexo" style="width: 100%" required>
                 <option value="Masculino">Masculino</option>
                 <option value="Femenino">Femenino</option>
-            </select><br>
+            </select>
 
             <label for="data">Data:</label>
             <input type="date" class="form-control" id="dataR" name="dataR" placeholder="dd/mm/aa" required
