@@ -114,7 +114,7 @@ mysqli_close($conexao);
             <input type="text" class="form-control" id="idade" name="idade" placeholder="Exemplo: 20" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
 
             <label for="sexo">Sexo: </label>
-            <select class="form-control" id="sexo" name="sexo" style="width: 50%" required>
+            <select class="form-control" id="sexo" name="sexo" style="width: 100%" required>
                 <option value="Masculino">Masculino</option>
                 <option value="Femenino">Femenino</option>
             </select><br>
