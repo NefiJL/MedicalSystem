@@ -24,7 +24,7 @@ $all_relato = $conexao->query($sql);
       <a class="navbar-brand" href="./usuario_Pos_login.php">MedicalSystem</a>
 
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search ">
+        <input class="form-control me-2" type="search" placeholder="Faça uma pesquisa" aria-label="Search ">
         <button class="btn btn-outline-success" type="submit">Pesquisar</button>
       </form>
 

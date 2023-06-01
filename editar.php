@@ -61,7 +61,7 @@ if (isset($_GET['relato_id'])) {
 </header>
 <body style="background-color: #f5f5f5;">
 
-  <div style="margin-top: 5%;">
+  <div style="margin-top: 4%;">
   <div class="container backgroundR">
     <h1>Editar Relato</h1>
     <form method="POST" action="salvar_edicao.php">
@@ -106,7 +106,7 @@ if (isset($_GET['relato_id'])) {
         <button type="submit" class="btn btn-primary">Guardar cambios</button>
       </form>
         <form method="POST" action="eliminar_publicacao.php">
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" style="margin-left:12%; margin-top: -5.0%">Eliminar publicación</button>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" style="margin-left:12%; margin-top: -5.3%">Eliminar publicación</button>
       </form>
     </div>
   </div>
