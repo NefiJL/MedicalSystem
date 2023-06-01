@@ -52,8 +52,15 @@ if (isset($_GET['relato_id'])) {
   <link rel="stylesheet" type="text/css" href="./css/styles.css">
   <script src='./js/bootstrap.bundle.js'></script>
 </head>
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./#">MedicalSystem</a>
+    </nav>
+</header>
 <body>
 
+  <div style="margin-top: 5%;">
   <div class="container">
     <h1>Editar Relato</h1>
     <form method="POST" action="salvar_edicao.php">
@@ -98,7 +105,7 @@ if (isset($_GET['relato_id'])) {
         <button type="submit" class="btn btn-primary">Guardar cambios</button>
       </form>
         <form method="POST" action="eliminar_publicacao.php">
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" style="margin-left:75%; margin-top: -8%">Eliminar publicación</button>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" style="margin-left:12%; margin-top: -5.0%">Eliminar publicación</button>
       </form>
     </div>
   </div>
@@ -124,7 +131,7 @@ if (isset($_GET['relato_id'])) {
       </div>
     </div>
   </div>
-
+  </div>
   <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
   <script type="text/javascript" src="./js/feather.mim.js"></script>
   <script type="text/javascript" src="./js/jquery-3.6.3.min.js"></script>
