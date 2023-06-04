@@ -1,3 +1,14 @@
+CREATE TABLE medicalsystem(
+
+    idM INT NOT NULL AUTO_INCREMENT,
+    telefone varchar (15),
+    emailM varchar (500),
+    
+    PRIMARY KEY(idM)
+);
+
+/*INSERT INTO `medicalsystem`(`telefone`, `emailM`) VALUES ('+55 49999256787','medicalsystem@gmail.com')*/
+
 CREATE TABLE usuario(
 
     id INT NOT NULL AUTO_INCREMENT,
@@ -18,7 +29,7 @@ CREATE TABLE relato (
     altura VARCHAR(10) NOT NULL,
     peso VARCHAR(10) NOT NULL,
     idade INT NOT NULL,
-    sexo ENUM('Masculino', 'm', 'M', 'f', 'F', 'Femenino') NOT NULL,
+    sexo ENUM('Masculino', 'Femenino') NOT NULL,
     dataR DATE NOT NULL,
     titulo VARCHAR(500) NOT NULL,
     observacao VARCHAR(5000) NOT NULL,

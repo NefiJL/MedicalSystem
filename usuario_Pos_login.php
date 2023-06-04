@@ -1,6 +1,19 @@
 <?php
 include('protect.php');
 
+$telefone = '';
+$emailM = '';
+
+if (isset($_GET['idM'])) {
+  $idM = $_GET['idM'];
+  // Obtener la información del relato específico
+  $sql = "SELECT * FROM medicalsystem WHERE idM = '$idM'";
+  $result = $conexao->query($sql);
+  $row = $result->fetch_assoc();
+  $telefone = $row["telefone"];
+  $emailM = $row["emailM"];
+}
+
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -143,6 +156,23 @@ require_once 'conexao.php';
       </button>
     </div>
     </div>
+
+    <footer class="container">
+    <hr class="featurette-divider">
+    <div class="text-center">
+      <p class="text-center">
+        &copy; 2022–<?php echo date('Y'); ?> | MedicalSystem | Nefi López - Gabriel Santana |
+      </p>
+      <p>
+        <a href="<?php echo $telefone; ?>">
+          <span data-feather="phone" style="color: black;"></span>
+        </a>
+        <a href="<?php echo $emailM; ?>">
+          <span data-feather="mail" style="color: black;"></span>
+        </a>
+      </p>
+    </div>
+  </footer>
 
     <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
     <script type="text/javascript" src="./js/feather.mim.js"></script>

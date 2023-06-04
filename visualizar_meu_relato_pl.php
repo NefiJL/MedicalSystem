@@ -35,6 +35,7 @@ if (isset($_GET['relato_id'])) {
       $result = $stmt->get_result();
       $row_usuario = $result->fetch_assoc();
       $nome = $row_usuario["nome"];
+      $especialidade = $row_usuario["especialidade"];
     }
   }
 }
@@ -141,6 +142,7 @@ if (isset($_GET['relato_id'])) {
       <div class="card-body text-white text-justify">
         <p class="card-text"><b><?php echo $relato; ?></b></p><br><br>
         <p class="card-text" style="margin-left: 90%;"><b>Escrito por: <?php echo $nome; ?></b></p><br>
+        <p class="card-text" style="margin-left: 90%;"><b>Especialidade: <?php echo $especialidade; ?></b></p><br>
 
         <div style="display: flex; justify-content: space-between;">
           <a style="margin-right: auto;" href="meusRelatos.php" class="btn btn-primary botao">Voltar</a>

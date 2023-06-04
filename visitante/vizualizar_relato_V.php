@@ -23,6 +23,7 @@ if (isset($usuario_id)) {
   $result = $conexao->query($sql);
   $row = $result->fetch_assoc();
   $nome = $row["nome"];
+  $especialidade = $row["especialidade"];
 }
 ?>
 
@@ -43,7 +44,7 @@ if (isset($usuario_id)) {
   
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-    <a class="navbar-brand" href="./index.php">MedicalSystem</a>
+    <a class="navbar-brand" href="../index.php">MedicalSystem</a>
 
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Faça uma pesquisa" aria-label="Search ">
@@ -62,7 +63,7 @@ if (isset($usuario_id)) {
 
 <body>
 
-<div class="row coluna" style="margin-left: 10%">
+<div class="row coluna" style="margin-left: 10%; margin-top: 2%">
     <div class="card mx-auto bg-dark">
       <div class="card-body text-white" style="text-align: center;">
         <h1><?php echo $titulo; ?></h1>
@@ -93,6 +94,7 @@ if (isset($usuario_id)) {
       <div class="card-body text-white text-justify">
         <p class="card-text"><b><?php echo $relato; ?></b></p><br><br>
         <p class="card-text" style="margin-left: 90%;"><b>Escrito por: <?php echo $nome; ?></b></p><br>
+        <p class="card-text" style="margin-left: 90%;"><b>Especialidade: <?php echo $especialidade; ?></b></p><br>
 
         <div style="display: flex; justify-content: space-between;">
           <a style="margin-right: auto;" href="busca_pl.php" class="btn btn-primary botao">Voltar</a>

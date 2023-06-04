@@ -253,17 +253,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             </form>
 
-            <div class="form-check" style="margin-top: -95px; margin-left: 18px;">
-                <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                <label class="form-check-label" style="margin-left: -40px;" for="flexCheckDefault">
-                    Aceito os termos e condições
-                </label>
-
-                <p style="text-center; margin-top: 80px; margin-left:-50px;"><a href="./login.php">Iniciar sessão</a></p>
-                
-            </div>
-
+        <div class="form-check" style="margin-top: -95px; margin-left: 18px;">
+            <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="aceito" required>
+            <label class="form-check-label" style="margin-left: -40px;" for="flexCheckDefault">
+                Aceito os termos e condições
+            </label>
         </div>
+
+</div>
+
+<script>
+    var checkbox = document.getElementById('flexCheckDefault');
+    var form = document.querySelector('form');
+
+    form.addEventListener('submit', function(event) {
+        if (!checkbox.checked) {
+            event.preventDefault(); // Evita que el formulario se envíe
+            alert('Debe aceptar los términos y condiciones.');
+        }
+    });
+</script>
+
+
+<script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
+<script type="text/javascript" src="./js/feather.mim.js"></script>
+<script type="text/javascript" src="./js/jquery-3.6.3.min.js"></script>
+<script type="text/javascript" src="./js/menu.js"></script>
 
 </body>
 
