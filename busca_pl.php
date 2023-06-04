@@ -3,8 +3,6 @@ include('protect.php');
 
 require_once 'conexao.php';
 
-session_start();
-
 $sql = "SELECT * FROM relato";
 $all_relato = $conexao->query($sql);
 ?>
@@ -86,14 +84,14 @@ $all_relato = $conexao->query($sql);
     while ($row = mysqli_fetch_assoc($all_relato)) {
     ?>
     <div class="card border-dark text-bg-dark mb-3"
-      style="max-width: 18rem; margin-top: 8.3%; margin-left: 3%; display: inline-block; width: 18rem; height: auto;">
-      <div class="card-body">
+      style="max-width: 18rem; margin-top: 8.3%; margin-left: 3%; display: inline-block; width: 18rem; height: auto; ">
+      <div class="card-body" style="height: 8rem;">
         <h5 class="card-title" style="text-align: center" name="titulo" id="tituloID"><b>
-            <?php echo $row["titulo"]; ?>
-          </b></h5>
-        <p class="card-text" name="relato" id="relatoID">
-          <?php echo $row["relatoD"]; ?>
-        </p>
+            <?php echo substr($row["titulo"], 0,50); ?>
+        </b></h5>
+          <p class="card-text" name="relato" id="relatoID">
+          <?php echo substr($row["relatoD"], 0, 30); ?>
+          </p>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item" name="altura" id="alturaID"><b>Altura:</b>

@@ -12,7 +12,7 @@ if (isset($_POST['relato_id'])) {
   $stmt->bind_param("i", $relato_id);
   
   if ($stmt->execute()) {
-    echo "La publicación ha sido eliminada correctamente.";
+    header("Location: meusRelatos.php");
   } else {
     echo "Error al eliminar la publicación: " . $stmt->error;
   }

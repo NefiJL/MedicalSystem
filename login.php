@@ -14,23 +14,27 @@ if(isset($_POST['email']) && isset($_POST['senha'])){ // Verifique se os campos 
         $email = $conexao->real_escape_string($_POST['email']);
         $senha = $conexao->real_escape_string($_POST['senha']);
 
-        //verificar se o usuário existe
-        $sql_code = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha'";
+        // Verificar se o usuário existe
+        $sql_code = "SELECT * FROM usuario WHERE email = '$email'";
         $sql_query = $conexao->query($sql_code) or die("Falha na execução do código SQL: " . $conexao->error);
 
         $quantidade = $sql_query->num_rows;
 
-        //Realizando login
         if($quantidade == 1) {
             $usuario = $sql_query->fetch_assoc();
 
-            $_SESSION['id'] = $usuario['id'];
-            $_SESSION['nome'] = $usuario['nome'];
+            // Verificar a senha
+            if (password_verify($senha, $usuario['senha'])) {
+                $_SESSION['id'] = $usuario['id'];
+                $_SESSION['nome'] = $usuario['nome'];
 
-            header("Location: usuario_Pos_login.php");
-            exit(); // Saia do script após redirecionar
+                header("Location: usuario_Pos_login.php");
+                exit(); // Saia do script após redirecionar
+            } else {
+                $erro = "E-mail ou senha inválida!";
+            }
         } else {
-            $erro = "E-mail ou senha Inválida!";
+            $erro = "E-mail ou senha inválida!";
         }
     }
 }
