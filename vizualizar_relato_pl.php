@@ -51,8 +51,8 @@ if (isset($usuario_id)) {
               echo "<h3>" . $_SESSION["nome"] . "</h3>";
               ?>
       </a>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search ">
+      <form class="d-flex" role="search" action="busca_resultado_pl.php" metho="GET">
+        <input name="busca2" class="form-control me-2" type="search" placeholder="Faça uma pesquisa" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Pesquisar</button>
       </form>
 
@@ -99,7 +99,7 @@ if (isset($usuario_id)) {
 
 <body>
 
-<div class="row coluna" style="margin-left: 10%">
+<div class="row coluna" style="margin-left: 10%; margin-top:6%">
     <div class="card mx-auto bg-dark">
       <div class="card-body text-white" style="text-align: center;">
         <h1><?php echo $titulo; ?></h1>

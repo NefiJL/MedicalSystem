@@ -64,10 +64,6 @@ if (isset($_GET['relato_id'])) {
               echo "<h3>" . $_SESSION["nome"] . "</h3>";
               ?>
       </a>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search ">
-        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
-      </form>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
         aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -111,7 +107,7 @@ if (isset($_GET['relato_id'])) {
 </header>
 
 <body>
-  <div class="row coluna" style="margin-left: 10%">
+  <div class="row coluna" style="margin-left: 10%; margin-top:6%">
     <div class="card mx-auto bg-dark">
       <div class="card-body text-white" style="text-align: center;">
         <h1><?php echo $titulo; ?></h1>

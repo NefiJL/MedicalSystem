@@ -32,7 +32,7 @@ require_once '../conexao.php';
            <span data-feather="user" style="color: white;"></span>&nbsp;&nbsp; Iniciar sessão</a>
           </li>
           <li class="nav-item"><a class="nav-link" href="../registro.php">
-            <span data-feather="user-plus" style="color: white;"></span>&nbsp;&nbsp;  Criar uma Conta</a>
+            <span data-feather="user-plus" style="color: white;"></span>&nbsp;&nbsp; Criar uma Conta</a>
           </li>
         </ul>
 
@@ -99,8 +99,8 @@ require_once '../conexao.php';
     </div>
   </div>
     <?php
-            }
-        }
+          }
+       }
     }
     ?>
 </main>

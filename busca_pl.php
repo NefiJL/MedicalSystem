@@ -84,7 +84,7 @@ $all_relato = $conexao->query($sql);
     while ($row = mysqli_fetch_assoc($all_relato)) {
     ?>
     <div class="card border-dark text-bg-dark mb-3"
-      style="max-width: 18rem; margin-top: 8.3%; margin-left: 3%; display: inline-block; width: 18rem; height: auto; ">
+      style="max-width: 18rem; margin-top: 6%; margin-left: 3%; display: inline-block; width: 18rem; height: auto; ">
       <div class="card-body" style="height: 8rem;">
         <h5 class="card-title" style="text-align: center" name="titulo" id="tituloID"><b>
             <?php echo substr($row["titulo"], 0,50); ?>

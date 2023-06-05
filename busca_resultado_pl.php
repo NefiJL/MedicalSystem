@@ -77,9 +77,7 @@ require_once 'conexao.php';
 <main>
     <?php
     if (!isset($_GET['busca'])) {
-    ?>
-
-    <?php
+   
     } else {
         $pesquisa = mysqli_real_escape_string($conexao, $_GET['busca']);
 
@@ -88,14 +86,15 @@ require_once 'conexao.php';
         $sql_query = $conexao->query($sql_code) or die("ERRO ao consultar! " . $conexao->error);
 
         if ($sql_query->num_rows == 0) {
+         echo"<h1>Upss... Nenhum resultado encontrado</h1>"
     ?>
-            <h1>Upss... Nenhum resultado encontrado</h1>
+             
     <?php
         } else {
             while ($row = $sql_query->fetch_assoc()) {
     ?>
-<div class="card border-dark text-bg-dark mb-3" style="max-width: 18rem; margin-top: 8.3%; margin-left: 3%; display: inline-block; width: 18rem; height: auto;">
-  <div class="card-body" style="height: 8rem;">
+<div class="card border-dark text-bg-dark mb-3 " style="max-width: 18rem; margin-top: 6%; margin-left: 3%; display: inline-block; width: 18rem; height: auto;">
+  <div class="card-body " style="height: 8rem;">
     <h5 class="card-title" style="text-align: center;" name="titulo" id="tituloID"><b>
       <?php echo substr($row["titulo"], 0, 50); ?>
     </b></h5>
