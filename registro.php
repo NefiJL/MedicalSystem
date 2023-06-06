@@ -1,17 +1,17 @@
 <?php
-// Importar archivo de conexión a la base de datos
+// Importar arquivo de conexão com o banco de dados
 session_start();
 require_once 'conexao.php';
-// Inicializar variables de entrada de usuario
+
+// Inicializar variáveis de entrada do usuário
 $nome = '';
 $email = '';
 $especialidade = '';
 $crm = '';
 $senha = '';
 
-// Verificar si se han enviado datos del formulario
+// Verificar se os dados do formulário foram enviados
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     if (isset($_POST['nome'])) {
         $nome = ucfirst(mysqli_real_escape_string($conexao, $_POST['nome']));
     }
@@ -33,51 +33,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $senha_hash = password_hash($senha, PASSWORD_DEFAULT); // Criptografar a senha
     }
 
-    // Verificar si el email ya existe en la base de datos
+    // Verificar se o e-mail já existe no banco de dados
     $sql = "SELECT email FROM usuario WHERE email = '$email'";
-    $vericarMail = mysqli_query($conexao, $sql);
-    $count = mysqli_num_rows($vericarMail);
+    $verificarEmail = mysqli_query($conexao, $sql);
+    $countEmail = mysqli_num_rows($verificarEmail);
 
-    // Verificar si el crm ya existe en la base de datos
+    // Verificar se o CRM já existe no banco de dados
     $sql = "SELECT CRM FROM usuario WHERE CRM = '$crm'";
-    $vericarCrm = mysqli_query($conexao, $sql);
-    $count2 = mysqli_num_rows($vericarMail);
+    $verificarCRM = mysqli_query($conexao, $sql);
+    $countCRM = mysqli_num_rows($verificarCRM);
 
-    if ($count > 0) {
-
-        // Si el email ya existe, mostrar un mensaje de error al usuario y no realizar la inserción de los datos del usuario
-        echo "O e-mail já existe no banco de dados. Tente novamente com um e-mail diferente.";
-
-    } elseif ($count2 > 0) {
-
-        // Si el crm ya existe, mostrar un mensaje de error al usuario y no realizar la inserción de los datos del usuario
-        echo "O CRM já existe no banco de dados. Por favor, tente novamente com um crm diferente.";
-
+    if ($countEmail > 0) {
+        // Se o e-mail já existir, exibir uma mensagem de erro ao usuário e não inserir os dados do usuário
+        $erro = "O e-mail já existe. Tente novamente com um e-mail diferente.";
+    } elseif ($countCRM > 0) {
+        // Se o CRM já existir, exibir uma mensagem de erro ao usuário e não inserir os dados do usuário
+        $erro = "O CRM já existe. Por favor, tente novamente com um CRM diferente.";
     } else {
+        // Preparar consulta de inserção do usuário
+        $sql = "INSERT INTO usuario (nome, email, especialidade, CRM, senha) VALUES ('$nome', '$email', '$especialidade', '$crm', '$senha_hash')";
 
-        // Preparar consulta de inserción de usuario
-        $sql = "INSERT INTO usuario (nome, email, especialidade, crm, senha) VALUES ('$nome','$email', '$especialidade', '$crm', '$senha_hash')";
-
-        // Executa a query SQL
+        // Executar a query SQL
         if (mysqli_query($conexao, $sql)) {
             echo "Dados inseridos com sucesso!";
         } else {
             echo "Erro ao inserir os dados: " . mysqli_error($conexao);
         }
 
-        // Redireccionar al usuario a la página de inicio de sesión
+        // Redirecionar o usuário para a página de login
         header("Location: login.php");
 
-        // Guardar datos en variables de sesión
+        // Salvar dados em variáveis de sessão
         $_SESSION['nome'] = $nome;
         $_SESSION['email'] = $email;
         $_SESSION['especialidade'] = $especialidade;
-        $_SESSION['crm'] = $crm;
+        $_SESSION['CRM'] = $crm;
         $_SESSION['senha'] = $senha_hash;
 
-        // Cerrar la conexión a la base de datos
+        // Fechar a conexão com o banco de dados
         mysqli_close($conexao);
     }
+}
+
+// Exibir a mensagem de erro, se existir
+if (isset($erro)) {
+    echo $erro;
 }
 ?>
 
@@ -93,6 +93,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
     <link rel="stylesheet" type="text/css" href="./css/registro2.css">
+
+    <style>
+        .error-message {
+            color: red;
+            text-align: left;
+            margin-top: 12px;
+            margin-left: 5px;
+        }
+    </style>
+
 </head>
 
 <header>
@@ -248,12 +258,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 </div>
 
+                <?php if(!empty($erro)): ?>
+                <p class="error-message"><?php echo $erro; ?></p> <!-- Exibe a mensagem de erro -->
+                <?php endif; ?>
+
                 <br><button class=" btn btn-lg btn-primary btn-block" type="submit"
                     style="margin-top: 60px; width: 250px; height: 48px;">Continuar</button>
 
             </form>
 
-        <div class="form-check" style="margin-top: -95px; margin-left: 18px;">
+        <div class="form-check" style="margin-top: -90px; margin-left: 18px;">
             <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="aceito" required>
             <label class="form-check-label" style="margin-left: -40px;" for="flexCheckDefault">
                 Aceito os termos e condições
