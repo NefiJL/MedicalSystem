@@ -269,7 +269,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     form.addEventListener('submit', function(event) {
         if (!checkbox.checked) {
             event.preventDefault(); // Evita que el formulario se envíe
-            alert('Debe aceptar los términos y condiciones.');
+            alert('Você deve aceitar os Termos e Condições.');
         }
     });
 </script>
