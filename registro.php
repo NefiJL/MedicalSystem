@@ -1,16 +1,16 @@
 <?php
-// Importar arquivo de conexão com o banco de dados
+// Importar archivo de conexión con el banco de dados
 session_start();
 require_once 'conexao.php';
 
-// Inicializar variáveis de entrada do usuário
+// Inicializar variables de entrada del usuario
 $nome = '';
 $email = '';
 $especialidade = '';
 $crm = '';
 $senha = '';
 
-// Verificar se os dados do formulário foram enviados
+// Verificar si los datos del formulario fueron enviados
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['nome'])) {
         $nome = ucfirst(mysqli_real_escape_string($conexao, $_POST['nome']));
@@ -33,54 +33,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $senha_hash = password_hash($senha, PASSWORD_DEFAULT); // Criptografar a senha
     }
 
-    // Verificar se o e-mail já existe no banco de dados
+    // Verificar si el correo electrónico ya existe en la base de datos
     $sql = "SELECT email FROM usuario WHERE email = '$email'";
     $verificarEmail = mysqli_query($conexao, $sql);
     $countEmail = mysqli_num_rows($verificarEmail);
 
-    // Verificar se o CRM já existe no banco de dados
+    // Verificar si el CRM ya existe en la base de datos
     $sql = "SELECT CRM FROM usuario WHERE CRM = '$crm'";
     $verificarCRM = mysqli_query($conexao, $sql);
     $countCRM = mysqli_num_rows($verificarCRM);
 
     if ($countEmail > 0) {
-        // Se o e-mail já existir, exibir uma mensagem de erro ao usuário e não inserir os dados do usuário
+        // Si el correo electrónico ya existe, mostrar un mensaje de error al usuario y no insertar los datos del usuario
         $erro = "O e-mail já existe. Tente novamente com um e-mail diferente.";
     } elseif ($countCRM > 0) {
-        // Se o CRM já existir, exibir uma mensagem de erro ao usuário e não inserir os dados do usuário
+        // Si el CRM ya existe, mostrar un mensaje de error al usuario y no insertar los datos del usuario
         $erro = "O CRM já existe. Por favor, tente novamente com um CRM diferente.";
     } else {
-        // Preparar consulta de inserção do usuário
+        // Preparar consulta para insertar al usuario
         $sql = "INSERT INTO usuario (nome, email, especialidade, CRM, senha) VALUES ('$nome', '$email', '$especialidade', '$crm', '$senha_hash')";
 
-        // Executar a query SQL
+        // Ejecutar la consulta SQL
         if (mysqli_query($conexao, $sql)) {
             echo "Dados inseridos com sucesso!";
         } else {
             echo "Erro ao inserir os dados: " . mysqli_error($conexao);
         }
 
-        // Redirecionar o usuário para a página de login
+        // Redirigir al usuario a la página de inicio de sesión
         header("Location: login.php");
 
-        // Salvar dados em variáveis de sessão
+        // Guardar datos en variables de sesión
         $_SESSION['nome'] = $nome;
         $_SESSION['email'] = $email;
         $_SESSION['especialidade'] = $especialidade;
         $_SESSION['CRM'] = $crm;
         $_SESSION['senha'] = $senha_hash;
 
-        // Fechar a conexão com o banco de dados
+        // Cerrar la conexión con la base de datos
         mysqli_close($conexao);
     }
 }
 
-// Exibir a mensagem de erro, se existir
-if (isset($erro)) {
-    echo $erro;
-}
 ?>
-
 
 <!DOCTYPE html>
 <html>

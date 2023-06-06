@@ -90,7 +90,7 @@ $all_relato = $conexao->query($sql);
             <?php echo substr($row["titulo"], 0,50); ?>
         </b></h5>
           <p class="card-text" name="relato" id="relatoID">
-          <?php echo substr($row["relatoD"], 0, 30); ?>
+          <?php echo substr($row["relatoD"], 0, 95); ?>
           </p>
       </div>
       <ul class="list-group list-group-flush">
