@@ -2,11 +2,12 @@
 include('protect.php');
 require_once 'conexao.php';
 
-// Verificar si se ha proporcionado un valor para 'relato_id'
+// Verifique se um valor foi fornecido para 'relato_id'
+
 if (isset($_GET['relato_id'])) {
   $relato_id = mysqli_real_escape_string($conexao, $_GET['relato_id']);
   
-  // Obtener la información del relato específico utilizando una sentencia preparada
+  // Obtenha as informações da história específica usando uma declaração preparada
   $sql = "SELECT * FROM relato WHERE idR = ?";
   $stmt = $conexao->prepare($sql);
   $stmt->bind_param("i", $relato_id);
@@ -14,7 +15,7 @@ if (isset($_GET['relato_id'])) {
   $result = $stmt->get_result();
   $row = $result->fetch_assoc();
   
-  // Verificar si se encontró el relato
+  // Verifique se a história foi encontrada
   if ($row) {
     $altura = $row["altura"];
     $peso = $row["peso"];
@@ -26,7 +27,7 @@ if (isset($_GET['relato_id'])) {
     $relato = $row["relatoD"];
     $usuario_id = $row["doctor_id"];
     
-    // Obtener el nombre del usuario utilizando una sentencia preparada
+    // Obtenha o nome de usuário usando uma instrução preparada
     if (isset($usuario_id)) {
       $sql = "SELECT * FROM usuario WHERE id = ?";
       $stmt = $conexao->prepare($sql);

@@ -6,7 +6,7 @@ $emailM = '';
 
 if (isset($_GET['idM'])) {
   $idM = $_GET['idM'];
-  // Obtener la información del relato específico
+  // Obtenha as informações da história específica
   $sql = "SELECT * FROM medicalsystem WHERE idM = '$idM'";
   $result = $conexao->query($sql);
   $row = $result->fetch_assoc();
