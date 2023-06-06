@@ -15,7 +15,7 @@
     $all_relato = $conexao->query($sql);
 
     if (!$all_relato) {
-      exit("Error al ejecutar la consulta: " . $conexao->error);
+      exit("Erro ao executar a consulta: " . $conexao->error);
     }
   }
   ?>
@@ -100,7 +100,7 @@
     <div class="card border-dark text-bg-dark mb-3" style="max-width: 18rem; margin-top: 2%; margin-left: 3%; display: inline-block; width: 18rem; height: auto;">
       <div class="card-body" style="height: 8rem;">
         <h5 class="card-title" style="text-align: center;" name="titulo" id="tituloID"><b><?php echo substr($row["titulo"], 0, 50); ?></b></h5>
-        <p class="card-text" name="relato" id="relatoID"><?php echo substr($row["relatoD"], 0, 95);<p></p> ?></p>
+        <p class="card-text" name="relato" id="relatoID"><?php echo substr($row["relatoD"], 0, 95) ?></p>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item" name="altura" id="alturaID"><b>Altura:</b><?php echo $row["altura"]; ?>Mt</li>

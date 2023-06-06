@@ -3,7 +3,7 @@ require_once '../conexao.php';
 
 if (isset($_GET['relato_id'])) {
   $relato_id = $_GET['relato_id'];
-  // Obtener la información del relato específico
+  // Obter as informações da história específica
   $sql = "SELECT * FROM relato WHERE idR = '$relato_id'";
   $result = $conexao->query($sql);
   $row = $result->fetch_assoc();
