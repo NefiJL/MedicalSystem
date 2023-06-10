@@ -158,21 +158,21 @@ require_once 'conexao.php';
     </div>
 
     <footer class="container">
-    <hr class="featurette-divider">
-    <div class="text-center">
-      <p class="text-center">
-        &copy; 2022–<?php echo date('Y'); ?> | MedicalSystem | Nefi López - Gabriel Santana |
-      </p>
-      <p>
-        <a href="<?php echo $telefone; ?>">
-          <span data-feather="phone" style="color: black;"></span>
-        </a>
-        <a href="<?php echo $emailM; ?>">
-          <span data-feather="mail" style="color: black;"></span>
-        </a>
-      </p>
-    </div>
-  </footer>
+  <hr class="featurette-divider">
+  <div class="text-center">
+    <p class="text-center">
+      &copy; 2022–<?php echo date('Y'); ?> | MedicalSystem | Nefi López - Gabriel Santana |
+    </p>
+    <p>
+      <a href="tel:<?php echo $telefone; ?>">
+        <span data-feather="phone" style="color: black;"></span>
+      </a>
+      <a href="mailto:<?php echo $emailM; ?>">
+        <span data-feather="mail" style="color: black;"></span>
+      </a>
+    </p>
+  </div>
+</footer>
 
     <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
     <script type="text/javascript" src="./js/feather.mim.js"></script>
