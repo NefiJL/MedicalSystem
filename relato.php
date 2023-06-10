@@ -1,10 +1,12 @@
 <?php
-// Importar archivo de conexión a la base de datos
+// Importar arquivo de conexão de banco de dados
+
 require_once 'conexao.php';
 
 include('protect.php');
 
-// Inicializar variables de entrada de usuario
+// Inicializar variáveis ​​de entrada do usuário
+
 $altura = '';
 $peso = '';
 $idade = '';
@@ -14,7 +16,7 @@ $observacao = '';
 $relatoD = '';
 $titulo = '';
 
-// Verificar si se han enviado datos del formulario
+// Verifique se os dados do formulário foram enviados
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($_POST['altura'])) {
@@ -49,26 +51,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $titulo = mysqli_real_escape_string($conexao, $_POST['titulo']);
     }
 
-    // Obtener el ID del médico actual desde la variable de sesión
+    // Obter ID do médico atual da variável de sessão
     $doctor_id = $_SESSION['id'];
 
-    // Preparar consulta de inserción en el relato
+    // Preparar Consulta de Inserção na História
     $sql = "INSERT INTO relato (altura, peso, idade, sexo, dataR, titulo, observacao, relatoD, doctor_id) 
             VALUES ('$altura', '$peso', '$idade', '$sexo', STR_TO_DATE('$dataR', '%Y-%m-%d'), '$titulo', '$observacao', '$relatoD', '$doctor_id')";
 
-    // Ejecutar la consulta SQL
+    //Executar a consulta SQL
     if (mysqli_query($conexao, $sql)) {
         echo "Dados inseridos com sucesso!";
     } else {
         echo "Erro ao inserir os dados: " . mysqli_error($conexao);
     }
 
-    // Redireccionar al usuario a la página de inicio de sesión
+    // Redirecionar o usuário para a página de login
     header("Location: usuario_Pos_login.php");
     exit;
 }
 
-// Cerrar la conexión a la base de datos
+// Fechar a conexão com o banco de dados
 mysqli_close($conexao);
 ?>
 

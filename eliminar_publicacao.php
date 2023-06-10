@@ -14,7 +14,7 @@ if (isset($_POST['relato_id'])) {
   if ($stmt->execute()) {
     header("Location: meusRelatos.php");
   } else {
-    echo "Error al eliminar la publicación: " . $stmt->error;
+    echo "Erro ao excluir postagem: " . $stmt->error;
   }
 
   $stmt->close();

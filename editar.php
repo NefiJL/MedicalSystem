@@ -106,7 +106,7 @@ if (isset($_GET['relato_id'])) {
         <div class="d-flex justify-content-between">
           <button type="submit" class="btn btn-primary">Salvar mudanças</button>
           <form method="POST" action="eliminar_publicacao.php">
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" style="margin-top: 10px;">Eliminar publicación</button>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" style="margin-top: 10px;">Eliminar publicacão</button>
           </form>
         </div>
       </form>
