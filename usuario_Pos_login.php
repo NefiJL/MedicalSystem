@@ -114,7 +114,7 @@ require_once 'conexao.php';
             <div class="carousel-caption text-start">
 
               <h1>Medical System</h1>
-              <p>O melhor site que você ja Visitou!!</p>
+              <p>O melhor site que você ja Visitou!</p>
             </div>
           </div>
         </div>
