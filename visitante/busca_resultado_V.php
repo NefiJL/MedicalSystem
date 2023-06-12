@@ -9,6 +9,7 @@ require_once '../conexao.php';
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>MedicalSystem</title>
+  <link rel="icon" href="../img/M4.png" type="image/x-icon">
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../css/styles.css">
@@ -20,7 +21,6 @@ require_once '../conexao.php';
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="../index.php">MedicalSystem</a>
-      <link rel="icon" href="../img/M4.png" type="image/x-icon">
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
