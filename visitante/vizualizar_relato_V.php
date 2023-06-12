@@ -34,6 +34,7 @@ if (isset($usuario_id)) {
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>MedicalSystem</title>
+  <link rel="icon" href="../img/M4.png" type="image/x-icon">
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../css/styles.css">
@@ -45,6 +46,7 @@ if (isset($usuario_id)) {
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
     <a class="navbar-brand" href="../index.php">MedicalSystem</a>
+    <link rel="icon" href="./img/M4.png" type="image/x-icon">
 
       <form class="d-flex" role="search" action="busca_resultado_V.php" metho="GET">
         <input name="busca2" class="form-control me-2" type="search" placeholder="Faça uma pesquisa" aria-label="Search">
