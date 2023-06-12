@@ -98,7 +98,7 @@ if (isset($usuario_id)) {
         <p class="card-text" style="margin-left: 90%;"><b>Especialidade: <?php echo $especialidade; ?></b></p><br>
 
         <div style="display: flex; justify-content: space-between;">
-          <a style="margin-right: auto;" href="busca_pl.php" class="btn btn-primary botao">Voltar</a>
+          <a style="margin-right: auto;" href="busca_V.php" class="btn btn-primary botao">Voltar</a>
         </div>
       </div>
     </div>
