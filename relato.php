@@ -136,8 +136,8 @@ mysqli_close($conexao);
         </div>
 
         <div class="mb-3 texto relato">
-            <label for="relato" class="form-label" style="margin-left: 47%;text-align:"><H4>Faça seu relato</H4></label>
-            <textarea class="form-control" id="relato" name="relato" rows="8" style="resize: vertical; max-height: 14em; overflow-y: auto;" required></textarea>
+            <label for="relatoD" class="form-label" style="margin-left: 47%;text-align:"><H4>Faça seu relato</H4></label>
+            <textarea class="form-control" id="relatoD" name="relatoD" rows="8" style="resize: vertical; max-height: 14em; overflow-y: auto;" required></textarea>
         
             <div style="text-align: center; margin-top: -30px;">
                 <input id="btn" type="submit" value="Publicar" style="margin-left: 50px; background-color: black;">
