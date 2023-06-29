@@ -20,6 +20,6 @@
 
 :heavy_check_mark: Editar o perfil da loja
 
-| [<img src="https://avatars.githubusercontent.com/u/116108866?v=4" width=115><br><sub>Julian Alves</sub>](https://github.com/JulianAlves006) |  [<img src="https://avatars.githubusercontent.com/u/116108711?v=4" width=115><br><sub>Nefi David</sub>](https://github.com/samaraCassie) | 
+| [<img src="https://avatars.githubusercontent.com/u/116109002?v=4" width=115><br><sub>Gabriel Otávio</sub>](https://github.com/GabrielSantanaL)|  [<img src="https://avatars.githubusercontent.com/u/116108711?v=4" width=115><br><sub>Nefi David</sub>](https://github.com/NefiJL) | 
 | :---: | :---: 
 
