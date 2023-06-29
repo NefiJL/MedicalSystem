@@ -11,7 +11,7 @@
 
 :heavy_check_mark: Logar 
 
-:heavy_check_mark: Adicionar Relatos
+:heavy_check_mark: Criar Relatos
 
 :heavy_check_mark: Publicar Relatos
 
