@@ -1,7 +1,7 @@
 # MedicalSystem
 
 <p align="justify">
-   Medical System tem como objetivo desenvolver um sistema que permita o registro, consulta e pesquisa de experiências relatadas por profissionais da área médica.
+   Medical System tem como objetivo desenvolver um sistema que permita registrar e pesquisar experiências relatadas por profissionais da área médica.
  Este sistema visa proporcionar uma plataforma eficiente e confiável para médicos compartilharem seus conhecimentos e descobertas.
 </p>
 
