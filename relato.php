@@ -1,11 +1,8 @@
 <?php
-// Importar arquivo de conexão de banco de dados
 
 require_once 'conexao.php';
 
 include('protect.php');
-
-// Inicializar variáveis ​​de entrada do usuário
 
 $altura = '';
 $peso = '';
@@ -16,7 +13,6 @@ $observacao = '';
 $relatoD = '';
 $titulo = '';
 
-// Verifique se os dados do formulário foram enviados
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($_POST['altura'])) {
@@ -51,26 +47,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $titulo = mysqli_real_escape_string($conexao, $_POST['titulo']);
     }
 
-    // Obter ID do médico atual da variável de sessão
     $doctor_id = $_SESSION['id'];
 
-    // Preparar Consulta de Inserção na História
     $sql = "INSERT INTO relato (altura, peso, idade, sexo, dataR, titulo, observacao, relatoD, doctor_id) 
             VALUES ('$altura', '$peso', '$idade', '$sexo', STR_TO_DATE('$dataR', '%Y-%m-%d'), '$titulo', '$observacao', '$relatoD', '$doctor_id')";
 
-    //Executar a consulta SQL
     if (mysqli_query($conexao, $sql)) {
         echo "Dados inseridos com sucesso!";
     } else {
         echo "Erro ao inserir os dados: " . mysqli_error($conexao);
     }
 
-    // Redirecionar o usuário para a página de login
     header("Location: usuario_Pos_login.php");
     exit;
 }
 
-// Fechar a conexão com o banco de dados
 mysqli_close($conexao);
 ?>
 
@@ -108,10 +99,10 @@ mysqli_close($conexao);
             <h1 class="paciente">Dados do paciente</h1>
 
             <label for="altura">Altura (M):</label>
-            <input type="text" class="form-control" id="altura" name="altura" placeholder="Exemplo: 1.84" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode === 46" required>
+            <input type="text" class="form-control" id="altura" name="altura" placeholder="Ejemplo: 1.84" onkeypress="return validateNumber(event)" required>
 
-            <label for="peso">Peso (Kg):</label>
-            <input type="text" class="form-control" id="peso" name="peso" placeholder="Exemplo: 65.4" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode === 46" required>
+            <label for="Peso">Peso (Kg):</label>
+            <input type="text" class="form-control" id="Peso" name="Peso" placeholder="Ejemplo: 65.4" onkeypress="return validateNumber(event)" required>
 
             <label for="idade">Idade:</label>
             <input type="text" class="form-control" id="idade" name="idade" placeholder="Exemplo: 20" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required><br>
@@ -137,7 +128,7 @@ mysqli_close($conexao);
 
         <div class="mb-3 texto relato">
             <label for="relatoD" class="form-label" style="margin-left: 47%;text-align:"><H4>Faça seu relato</H4></label>
-            <textarea class="form-control" id="relatoD" name="relatoD" rows="8" style="resize: vertical; max-height: 14em; overflow-y: auto;" required></textarea>
+            <textarea class="form-control" id="relatoD" name="relatoD" rows="20" style="resize: vertical; max-height: 20em; overflow-y: auto;" required></textarea>
         
             <div style="text-align: center; margin-top: -30px;">
                 <input id="btn" type="submit" value="Publicar" style="margin-left: 50px; background-color: black;">
@@ -145,6 +136,23 @@ mysqli_close($conexao);
 
         </div>
     </form>
+
+<script>
+function validateNumber(event) {
+  const charCode = event.charCode;
+  const input = event.target.value;
+  
+  if (
+    (charCode >= 48 && charCode <= 57) || // Dígitos del 0 al 9
+    (charCode === 46 && input.indexOf('.') === -1) // Punto decimal solo si no hay otro
+  ) {
+    return true;
+  } else {
+    event.preventDefault();
+    return false;
+  }
+}
+</script>
 
     <script src='./js/bootstrap.bundle.js'></script>
     <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
