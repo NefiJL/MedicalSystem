@@ -40,16 +40,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $countEmail = mysqli_num_rows($verificarEmail);
 
     // Verifique se o CRM já existe no banco de dados
-
     $sql = "SELECT CRM FROM usuario WHERE CRM = '$crm'";
     $verificarCRM = mysqli_query($conexao, $sql);
     $countCRM = mysqli_num_rows($verificarCRM);
 
     if ($countEmail > 0) {
-        // Se o e-mail já existir, mostre uma mensagem de erro ao usuário e não insira os dados do usuário
+        // Se o e-mail já existir, mostre uma mensagem de erro ao usuário
+        $_SESSION['nome'] = $nome;
+        $_SESSION['email'] = '';
+        $_SESSION['especialidade'] = $especialidade;
+        $_SESSION['CRM'] = $crm;
+        $_SESSION['senha'] = $senha_hash;
         $erro = "O e-mail já existe. Tente novamente com um e-mail diferente.";
     } elseif ($countCRM > 0) {
-        //Se o CRM já existir, mostre uma mensagem de erro ao usuário e não insira os dados do usuário
+        // Se o CRM já existir, mostre uma mensagem de erro ao usuário
+        $_SESSION['nome'] = $nome;
+        $_SESSION['email'] = $email;
+        $_SESSION['especialidade'] = $especialidade;
+        $_SESSION['CRM'] = '';
+        $_SESSION['senha'] = $senha_hash;
         $erro = "O CRM já existe. Por favor, tente novamente com um CRM diferente.";
     } else {
         // Preparar consulta para inserir usuário
@@ -74,6 +83,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Fechar a conexão com o banco de dados
         mysqli_close($conexao);
+    }
+} else {
+    // Preencher campos do formulário com valores de sessão, se estiverem definidos
+    if (isset($_SESSION['nome'])) {
+        $nome = $_SESSION['nome'];
+    }
+
+    if (isset($_SESSION['email'])) {
+        $email = $_SESSION['email'];
+    }
+
+    if (isset($_SESSION['especialidade'])) {
+        $especialidade = $_SESSION['especialidade'];
+    }
+
+    if (isset($_SESSION['CRM'])) {
+        $crm = $_SESSION['CRM'];
     }
 }
 
@@ -114,27 +140,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body class=" text-center">
 
-        <div class="backgroundR">
+<div class="backgroundR">
 
-        <form class="form-signin" method="POST">
+    <form class="form-signin" method="POST">
 
-                <div class="inputContainer">
+        <div class="inputContainer">
+            <input type="text" id="inputNome" class="input" name="nome" placeholder="a" required autofocus value="<?php echo $nome; ?>">
+            <label for="inputNome" class="label">Nome de usuario</label>
+        </div>
+        
+        <div class="inputContainer">
+            <input type="email" id="inputEmail" class="input" name="email" placeholder="a" required value="<?php echo $email; ?>">
+            <label for="inputEmail" class="label">E-mail</label>
+        </div>
 
-                    <input type="text" id="inputNome" class="input" name="nome" placeholder="a" required autofocus>
-                    <label for="inputNome" class="label">Nome de usuario</label>
-
-                </div>
-                
-                <div class="inputContainer">
-
-                    <input type="email" id="inputEmail" class="input" name="email" placeholder="a" required>
-                    <label for="inputEmail" class="label">E-mail</label>
-
-                </div>
-
-                <div class="inputContainer">
-
-                <select class="form-select" id="inputEspecialidade" class="input" name="especialidade"  aria-label="Default select example" placeholder="a" required>
+        <div class="inputContainer">
+        <select class="form-select" id="inputEspecialidade" class="input" name="especialidade"  aria-label="Default select example" placeholder="a" required value="<?php echo $especialidade; ?>">
                     <option selected>Especialidade</option>
                     <option value="Alergista">Alergista</option>
                     <option value="Alergista pediátrico">Alergista pediátrico</option>
@@ -241,38 +262,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <option value="Terapeuta ocupacional">Terapeuta ocupacional</option>
                     <option value="Urologista">Urologista</option>
                     </select>
-                </div>
-                <div class="inputContainer">
-
-                    <input type="text" id="inputCRM" class="input" name="crm" placeholder="a" required>
-                    <label for="inputCRM" class="label">Numero de registro (CRM)</label>
-
-                </div>
-
-                <div class="inputContainer">
-
-                    <input type="password" id="inputSenhaR" class="input" name="senha" placeholder="a" required>
-                    <label for="inputSenhaR" class="label">Senha</label>
-
-                </div>
-
-                <?php if(!empty($erro)): ?>
-                <p class="error-message"><?php echo $erro; ?></p> <!-- Exibe a mensagem de erro -->
-                <?php endif; ?>
-
-                <br><button class=" btn btn-lg btn-primary btn-block" type="submit"
-                    style="margin-top: 30px; width: 250px; height: 48px;">Continuar</button>
-
-                    <div><p style="text-center; margin-top: 20px"><a href="./termos.php">Ler termos e condições</a></p></div><br><br><br>
-
-            </form>
-
-        <div class="form-check" style="margin-top: -90px; margin-left: 18px;">
-            <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="aceito" required>
-            <label class="form-check-label" style="margin-left: -40px;" for="flexCheckDefault">
-                Aceito os termos e condições
-            </label>
         </div>
+
+        <div class="inputContainer">
+            <input type="text" id="inputCRM" class="input" name="crm" placeholder="a" required value="<?php echo $crm; ?>">
+            <label for="inputCRM" class="label">Numero de registro (CRM)</label>
+        </div>
+
+        <div class="inputContainer">
+            <input type="password" id="inputSenhaR" class="input" name="senha" placeholder="a" required>
+            <label for="inputSenhaR" class="label">Senha</label>
+        </div>
+
+        <?php if(!empty($erro)): ?>
+        <p class="error-message"><?php echo $erro; ?></p> 
+        <?php endif; ?>
+
+        <br><button class=" btn btn-lg btn-primary btn-block" type="submit" style="margin-top: 20px; width: 250px; height: 48px;">Continuar</button>
+
+        <div><p style="text-center; margin-top: 20px"><a href="./termos.php">Ler termos e condições</a></p></div><br><br><br>
+
+    </form>
+
+    <div class="form-check" style="margin-top: -90px; margin-left: 18px;">
+        <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="aceito" required>
+        <label class="form-check-label" style="margin-left: -40px;" for="flexCheckDefault">
+            Aceito os termos e condições
+        </label>
+    </div>
 
 </div>
 
