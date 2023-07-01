@@ -58,7 +58,20 @@ if (isset($_GET['idM'])) {
 </header>
 <body>
   <main style="margin-top: 0px;">
-    <!-- Carrossel de itens -->
+    <div id="alertaModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);">
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 5px;">
+        <h1 style="text-align: center;">Alerta</h1>
+        <p >Você deve declarar que aceita e está ciente dos termos e condições para continuar</p>
+        <p style="text-center; margin-top: 20px"><a href="./termos.php">Ler termos e condições</a></p>
+
+        <div style="display: flex; justify-content: center;">
+          <button class="btn btn-lg btn-primary btn-block" onclick="aceptarAlerta()">Estou ciente e concordo com os termos e condições</button>
+        </div>
+
+      </div>
+    </div>
+    <div id="contenido" style="display: none;">
+      <!-- Carrossel de itens -->
     <div id="carrossel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carrossel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -135,5 +148,15 @@ if (isset($_GET['idM'])) {
   <script type="text/javascript" src="./js/jquery-3.6.3.min.js"></script>
   <script type="text/javascript" src="./js/menu.js"></script>
   <script type="text/javascript" src="./js/campo_pesquisa.js"></script>
+  <script type="text/javascript">
+    window.onload = function() {
+      document.getElementById("alertaModal").style.display = "block";
+    }
+
+    function aceptarAlerta() {
+      document.getElementById("alertaModal").style.display = "none";
+      document.getElementById("contenido").style.display = "block";
+    }
+  </script>
 </body>
 </html>

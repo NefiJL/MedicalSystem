@@ -261,7 +261,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <?php endif; ?>
 
                 <br><button class=" btn btn-lg btn-primary btn-block" type="submit"
-                    style="margin-top: 60px; width: 250px; height: 48px;">Continuar</button>
+                    style="margin-top: 30px; width: 250px; height: 48px;">Continuar</button>
+
+                    <div><p style="text-center; margin-top: 20px"><a href="./termos.php">Ler termos e condições</a></p></div><br><br><br>
 
             </form>
 
